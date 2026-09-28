@@ -14,19 +14,14 @@ Understanding phase. Nothing is built yet. The theory has been restated for the 
 - `docs/approach-wheel.md`: the two wheel diagrams decoded: the seven dichotomies and their boundaries, each approach as six poles plus a bridge, the asset and risk halves, the eight types of data, the 56 tools and 56 weapons, and the opposites rule behind the author's early survey.
 - `grammar/approaches.json`: the same wheel as data (first file in the grammar layer).
 
-## Proposed shape (for discussion)
+## Proposed shape
+
+A standalone, free, local phone app. Voice in, voice out. The smallest language model that can tidy a transcript and file it into a folder, and no bigger, because the knowledge lives in the app's grammar files rather than in the model. Everything a reading needs is kept in small folders (dreams, people, animals, places, waking life, alarms, approach profile) so only a few short entries are ever in context. The full plan is `docs/app-plan.md`.
 
 The core is model-agnostic and lives in this repo:
 
-1. `grammar/`: the symbol dictionary as structured data (each symbol: country markers, function-in-relation-to-a-body, reading, scripture parallels, worked examples from the books).
-2. `prompts/`: the interpreter's instructions, built from `docs/reading-method.md`.
-3. `evals/`: the books' own worked dreams (the kitchen, the sea of glass, the money changers, the she-bear, the coin in the fish) as test cases, so any model can be checked against the author's readings.
+1. `grammar/`: the symbol dictionary and the approach wheel as structured data, plus the author's text-analysis word lists.
+2. `prompts/`: the interpreter's instructions, built from `docs/reading-method.md`, one step at a time.
+3. `evals/`: the books' own worked dreams as test cases.
 
-Two runtimes on top of that core:
-
-- **Claude-backed** (best reading quality): a small chat app or CLI that sends the grammar and method as the system prompt.
-- **Fully local** (private, offline): the same app pointed at a local model through Ollama. Weaker, but nothing leaves the machine.
-
-Either way the interpreter keeps a local dream journal so it can read series of three, recurring symbols, and each dreamer's personal overrides (a house that means debt to one person and refuge to another).
-
-"Plugin" can mean several things (a Claude Project, a ChatGPT custom GPT, an Obsidian plugin, a Claude Code skill). The core above can be exported to any of those once the theory is confirmed.
+The same core can later be exported as a Claude Project, a custom GPT, or a plugin, but the phone app is the target.
