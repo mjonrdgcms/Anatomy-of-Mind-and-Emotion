@@ -1,6 +1,6 @@
 # Anatomy of Mind and Emotion: Dream Interpreter
 
-An AI dream interpreter built on the symbol grammar of *The Four Rivers of Paradise* and the sorting model of *Beyond Flat Land*.
+An AI dream interpreter built on the author's books: the symbol grammar of *The Four Rivers of Paradise*, the sorting model of *Beyond Flat Land*, and the stress physiology of *World of Alphas* and *Postpartum: The Lion Is Real*. The author intends all of their books to be in the AI's knowledge base; the four above are the ones read so far.
 
 ## Status
 
@@ -8,6 +8,9 @@ Understanding phase. Nothing is built yet. The theory has been restated for the 
 
 - `docs/theory.md`: the system as understood, with the points that need confirmation at the end.
 - `docs/reading-method.md`: the step-by-step procedure an interpreter follows, with the guards that keep it honest.
+- `docs/seven-in-dreams.md`: how the seven approaches of *Beyond Flat Land* enter a dream reading.
+- `docs/seven-symbols.md`: the body register as the primary symbol set for the seven (settled with the author), with secondary built forms and animal classes.
+- `docs/seven-emotions.md`: the seven emotions on their axes, each with its heard side and its screaming side, drawn from all four books.
 
 ## Proposed shape (for discussion)
 

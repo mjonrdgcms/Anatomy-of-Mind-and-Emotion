@@ -143,11 +143,27 @@ Two rivers stay in the garden (face to face, back to back: the household); two g
 The second book supplies the mind's side of the sorting, one junction downstream.
 
 - Seven approaches (bridges): Initiation, Deconstruction, Expansion, Unification, Implementation, Preservation, Transformation. People run about two and a half under load (ego, persona, shadow), and the shadow appears in caricature.
-- Seven emotions as messages carrying a verb: contempt → receive (Initiation); sadness → isolate/define (Deconstruction); surprise → expand (Expansion); happiness → incorporate (Unification); anger → hold (Implementation); fear → take (Preservation); disgust → let go (Transformation). Reception, not obedience.
+- Seven emotions as messages carrying a verb: contempt → receive (Initiation); sadness → isolate/define (Deconstruction); surprise → expand (Expansion); happiness → incorporate (Unification); anger → hold (Implementation); fear → take (Preservation); disgust → let go (Transformation). Reception, not obedience. The author's axes for the seven (functionality, reproducibility, perspective, harmony, stability, certainty, excellence) and the heard and screaming side of each are in `docs/seven-emotions.md`.
 - Two questions, not two verdicts: **joy** (does this matter?) and **peace** (does this hold together?). Joy without peace: the story keeps changing and the certainty does not. Peace without joy: everything coheres and no one can say what it is for.
 - Two routing errors, with predicted dream signatures: **proxy capture** appears as the furniture of calculation imposed on what matters (weighed, counted, gridded, in rows); **meaning as amnesty** appears as the ground failing to hold (water where the floor should be, a house adrift).
 - Function-first rule: begin with what a thing does in relation to a body, then check against this dream and this life.
 - Guards the interpreter must keep: the dream proposes, waking life disposes; a dream is a hypothesis about your model of the world, never evidence about another person; a reading should account for several features, connect to something specific in waking life, not ignore the elements that push the other way, and end in a question, observation, or action that can be checked outside the dream; resonance is weak evidence; interpretation is an accelerant, not a requirement; if it increases certainty faster than contact with reality, set it down.
+
+## 9b. The stress-physiology layer (*World of Alphas*, *Postpartum*)
+
+The two stress books supply the body's side: what happens when a message from the heart goes unread.
+
+- **Alpha mode** is a cost disproportionate to the benefit: the body funded for a fight that is not happening. The lion is not there. The 17% filter: most of the alarm's triggers are for lions that are not there, and the practice is to shorten the trigger list, not to quiet the alarm.
+- **An overruled alarm gets louder.** Suppressing or arguing with a signal tells the system it is being overruled rather than informed. Disarming has two parts: release the muscles that were funded for the fight (the breath and the shoulders, the physiological sigh, five-second yoga), then listen to what the alarm says and challenge the assumptions it is made of.
+- **Levels and criteria.** A threat response drops from maximum when a named, observable criterion is attached: "this is a forty; if he passes the pillar, I move; re-check at seven." A reading, not a verdict. "This is only a forty so stop it" is a debate, and a debate is itself a threat signal.
+- **Courtroom vs boardroom.** The courtroom runs on verdict, a stacked jury, tampered evidence, and proving rather than doing; its fuel is fear and greed as urgency. The boardroom asks four questions and runs on maybe (the farmer's maybe). Recruiting a jury for where the shame should sit is the triangle in *Four Rivers*.
+- **The arm test** shows three defended patterns and their verdicts: Too Nice (matching; *not selfish*), Too Strong (suspended; *not weak*), Too Self-Sufficient (yield and reclaim; *wrong to have trusted*). Each is a message from the heart held in the muscle instead of read.
+- **Two compasses, two counterfeits.** Joy (does this matter?) is counterfeited by pleasure, which leaves the appetite rather than something behind. Peace (does this hold together?) is counterfeited by coming out ahead of somebody, a position that must be re-established every time it is checked. Both counterfeits read "the number went up."
+- **Urgency as a counterfeit key.** If nothing gets done unless it is on fire, the nervous system learns to light fires. The most meaningful fifth of a life never screams and loses every scheduling contest; it has to be given a Thursday at seven.
+- **The REM editing room.** Sleep keeps a memory's content and strips its charge, when noradrenaline is low enough to let it. A hot memory retold with the charge intact never gets filed. This is the physiological side of "dreams sort what got filed in the wrong box."
+- **What the dreams are sorting** (*Postpartum* ch. 26). The commonest mis-sort is a person or a relationship filed under evidence: held with the mind's tools (proof, verdict, ledger) when it belongs to the heart. A recurring dream is the same grain returned until it is filed. The waking question is: what have I been holding with the wrong tools?
+- **Love unconditional, trust conditional.** There is no control in love. The wall is logic and trust; the garden is love (squeezing the puppy). The deepest motivation is to hope the best and create synergy.
+- **Verification** must be checkable, correctable, and terminate. A check with no termination is the wall with no gate.
 
 ## 10. Where I would like confirmation
 
