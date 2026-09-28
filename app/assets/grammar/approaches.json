@@ -1,0 +1,1415 @@
+{
+ "_notes": {
+  "source": "Decoded from the author's two wheel diagrams and the 2025 Text Analysis file. See docs/approach-wheel.md.",
+  "status": "Dichotomies and approaches: high confidence (author). Tools and weapons: tentative (author). Cognitive-function tags: loose mnemonic only; introverted = risk-appreciating, extraverted = asset-appreciating.",
+  "dichotomies": [
+   [
+    "Direct",
+    "Indirect"
+   ],
+   [
+    "Specific",
+    "General"
+   ],
+   [
+    "Future",
+    "Present"
+   ],
+   [
+    "Interactive",
+    "Speculative"
+   ],
+   [
+    "Simple",
+    "Complex"
+   ],
+   [
+    "Process",
+    "Result"
+   ],
+   [
+    "Flexible",
+    "Rigid"
+   ]
+  ],
+  "data_types": "concrete|abstract x asset|risk x raw|interpreted; filled = asset, hollow = risk; square family = concrete, round family = abstract; whole shape = raw, shape with a piece removed = interpreted.",
+  "open_questions": [
+   "raw vs interpreted assignment within each pair (symbol row vs label order on some sides)",
+   "tool-level opposite rule (same data type across the wheel, or asset faces risk)"
+  ]
+ },
+ "approaches": {
+  "Initiation": {
+   "number": 1,
+   "colour": "#e3906f",
+   "poles_whole": [
+    "Direct",
+    "Specific",
+    "Present",
+    "Simple",
+    "Result",
+    "Rigid"
+   ],
+   "bridge": [
+    "Interactive",
+    "Speculative"
+   ],
+   "asset_half_pole": "Interactive",
+   "risk_half_pole": "Speculative",
+   "opposite_approaches": [
+    "Expansion",
+    "Transformation"
+   ],
+   "asset_half_faces": {
+    "approach": "Expansion",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Transformation",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Functionality",
+     "pair_weapon": "Intimidation",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Speculative",
+     "sub": [
+      {
+       "tool": "Emulation",
+       "weapon": "Unoriginality",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Speculative"
+       ]
+      },
+      {
+       "tool": "Recognition",
+       "weapon": "Jealousy",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Speculative"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Confidence",
+     "pair_weapon": "Competitive",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Interactive",
+     "sub": [
+      {
+       "tool": "Decisiveness",
+       "weapon": "Impatience",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Interactive"
+       ]
+      },
+      {
+       "tool": "Options",
+       "weapon": "Indecision",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Interactive"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Cleverness",
+     "pair_weapon": "Cheating",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Speculative",
+     "sub": [
+      {
+       "tool": "Strategy",
+       "weapon": "Indiscriminate",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Speculative"
+       ]
+      },
+      {
+       "tool": "Inference",
+       "weapon": "Scapegoating",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Speculative"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Enterprise",
+     "pair_weapon": "Exploitation",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Interactive",
+     "sub": [
+      {
+       "tool": "Autonomy",
+       "weapon": "Audacity",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Interactive"
+       ]
+      },
+      {
+       "tool": "Anticipation",
+       "weapon": "Conjecture",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Simple",
+        "Result",
+        "Rigid",
+        "Interactive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Deconstruction": {
+   "number": 2,
+   "colour": "#506f94",
+   "poles_whole": [
+    "Direct",
+    "Specific",
+    "Present",
+    "Speculative",
+    "Process",
+    "Rigid"
+   ],
+   "bridge": [
+    "Simple",
+    "Complex"
+   ],
+   "asset_half_pole": "Simple",
+   "risk_half_pole": "Complex",
+   "opposite_approaches": [
+    "Transformation",
+    "Unification"
+   ],
+   "asset_half_faces": {
+    "approach": "Transformation",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Unification",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Empiricism",
+     "pair_weapon": "Intolerance",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Complex",
+     "sub": [
+      {
+       "tool": "Categorization",
+       "weapon": "Hypercritical",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Complex"
+       ]
+      },
+      {
+       "tool": "Corroboration",
+       "weapon": "Skeptical",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Complex"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Objectivity",
+     "pair_weapon": "Self-fulfilling",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Simple",
+     "sub": [
+      {
+       "tool": "Accuracy",
+       "weapon": "Selectivity",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Simple"
+       ]
+      },
+      {
+       "tool": "Concentration",
+       "weapon": "Rumination",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Simple"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Causation",
+     "pair_weapon": "Instigation",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Complex",
+     "sub": [
+      {
+       "tool": "Insight",
+       "weapon": "Superstition",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Complex"
+       ]
+      },
+      {
+       "tool": "Antithesis",
+       "weapon": "Rebelliousness",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Complex"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Subjectivity",
+     "pair_weapon": "Misuse",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Simple",
+     "sub": [
+      {
+       "tool": "Context",
+       "weapon": "Stereotype",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Simple"
+       ]
+      },
+      {
+       "tool": "Immersion",
+       "weapon": "Indulgence",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Direct",
+        "Specific",
+        "Present",
+        "Speculative",
+        "Process",
+        "Rigid",
+        "Simple"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Expansion": {
+   "number": 3,
+   "colour": "#429583",
+   "poles_whole": [
+    "Indirect",
+    "Future",
+    "Speculative",
+    "Complex",
+    "Process",
+    "Flexible"
+   ],
+   "bridge": [
+    "Specific",
+    "General"
+   ],
+   "asset_half_pole": "Specific",
+   "risk_half_pole": "General",
+   "opposite_approaches": [
+    "Implementation",
+    "Initiation"
+   ],
+   "asset_half_faces": {
+    "approach": "Implementation",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Initiation",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Humility",
+     "pair_weapon": "Laziness",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "General",
+     "sub": [
+      {
+       "tool": "Learning",
+       "weapon": "Skimming",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "General"
+       ]
+      },
+      {
+       "tool": "Patience",
+       "weapon": "Procrastination",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "General"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Innovation",
+     "pair_weapon": "Entertainment",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Specific",
+     "sub": [
+      {
+       "tool": "Pioneering",
+       "weapon": "Ostentatious",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "Specific"
+       ]
+      },
+      {
+       "tool": "Openness",
+       "weapon": "Paradox",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "Specific"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Holism",
+     "pair_weapon": "Eccentric",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "General",
+     "sub": [
+      {
+       "tool": "Implications",
+       "weapon": "Desperate",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "General"
+       ]
+      },
+      {
+       "tool": "Consideration",
+       "weapon": "Childishness",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "General"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Imagination",
+     "pair_weapon": "Helplessness",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Specific",
+     "sub": [
+      {
+       "tool": "Vision",
+       "weapon": "Wishfulness",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "Specific"
+       ]
+      },
+      {
+       "tool": "Creativity",
+       "weapon": "Distractibility",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Indirect",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Flexible",
+        "Specific"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Unification": {
+   "number": 4,
+   "colour": "#ebc97b",
+   "poles_whole": [
+    "Indirect",
+    "General",
+    "Interactive",
+    "Simple",
+    "Result",
+    "Flexible"
+   ],
+   "bridge": [
+    "Future",
+    "Present"
+   ],
+   "asset_half_pole": "Future",
+   "risk_half_pole": "Present",
+   "opposite_approaches": [
+    "Deconstruction",
+    "Preservation"
+   ],
+   "asset_half_faces": {
+    "approach": "Deconstruction",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Preservation",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Continuity",
+     "pair_weapon": "Tyranny",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Present",
+     "sub": [
+      {
+       "tool": "Maintenance",
+       "weapon": "Invasiveness",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Present"
+       ]
+      },
+      {
+       "tool": "Follow-up",
+       "weapon": "Nosey",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Present"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Receptivity",
+     "pair_weapon": "Erraticness",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Future",
+     "sub": [
+      {
+       "tool": "Amenability",
+       "weapon": "Permissiveness",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Future"
+       ]
+      },
+      {
+       "tool": "Responsiveness",
+       "weapon": "Fakeness",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Future"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Synergy",
+     "pair_weapon": "Enmeshment",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Present",
+     "sub": [
+      {
+       "tool": "Tact",
+       "weapon": "Self-effacing",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Present"
+       ]
+      },
+      {
+       "tool": "Compatibility",
+       "weapon": "Hypersensitivity",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Present"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Hope",
+     "pair_weapon": "Passive-aggressive",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Future",
+     "sub": [
+      {
+       "tool": "Opportunity",
+       "weapon": "Dramatic",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Future"
+       ]
+      },
+      {
+       "tool": "Optimism",
+       "weapon": "Prattling",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible",
+        "Future"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Implementation": {
+   "number": 5,
+   "colour": "#e36159",
+   "poles_whole": [
+    "Direct",
+    "General",
+    "Present",
+    "Interactive",
+    "Simple",
+    "Result"
+   ],
+   "bridge": [
+    "Flexible",
+    "Rigid"
+   ],
+   "asset_half_pole": "Flexible",
+   "risk_half_pole": "Rigid",
+   "opposite_approaches": [
+    "Preservation",
+    "Expansion"
+   ],
+   "asset_half_faces": {
+    "approach": "Preservation",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Expansion",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Completeness",
+     "pair_weapon": "Defensive",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Rigid",
+     "sub": [
+      {
+       "tool": "Commitment",
+       "weapon": "Hiding",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Rigid"
+       ]
+      },
+      {
+       "tool": "Honesty",
+       "weapon": "Scrupulousness",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Rigid"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Production",
+     "pair_weapon": "Coarseness",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Flexible",
+     "sub": [
+      {
+       "tool": "Structure",
+       "weapon": "Overreach",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible"
+       ]
+      },
+      {
+       "tool": "Diligence",
+       "weapon": "Stubbornness",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Momentum",
+     "pair_weapon": "Restlessness",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Rigid",
+     "sub": [
+      {
+       "tool": "Stability",
+       "weapon": "Unadventurousness",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Rigid"
+       ]
+      },
+      {
+       "tool": "Resilience",
+       "weapon": "Toiling",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Rigid"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Belief",
+     "pair_weapon": "Mania",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Flexible",
+     "sub": [
+      {
+       "tool": "Principles",
+       "weapon": "Ephemeral",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible"
+       ]
+      },
+      {
+       "tool": "Enthusiasm",
+       "weapon": "Relentlessness",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Direct",
+        "General",
+        "Present",
+        "Interactive",
+        "Simple",
+        "Result",
+        "Flexible"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Preservation": {
+   "number": 6,
+   "colour": "#438088",
+   "poles_whole": [
+    "Specific",
+    "Future",
+    "Speculative",
+    "Complex",
+    "Process",
+    "Rigid"
+   ],
+   "bridge": [
+    "Direct",
+    "Indirect"
+   ],
+   "asset_half_pole": "Direct",
+   "risk_half_pole": "Indirect",
+   "opposite_approaches": [
+    "Unification",
+    "Implementation"
+   ],
+   "asset_half_faces": {
+    "approach": "Unification",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Implementation",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Preparation",
+     "pair_weapon": "Preemptive",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Indirect",
+     "sub": [
+      {
+       "tool": "Utility",
+       "weapon": "Cowardice",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Indirect"
+       ]
+      },
+      {
+       "tool": "Organization",
+       "weapon": "Perfectionism",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Indirect"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Budgeting",
+     "pair_weapon": "Corruption",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Direct",
+     "sub": [
+      {
+       "tool": "Prioritization",
+       "weapon": "Favoritism",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Direct"
+       ]
+      },
+      {
+       "tool": "Fortification",
+       "weapon": "Redundancy",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Direct"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Calculation",
+     "pair_weapon": "Pessimism",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Indirect",
+     "sub": [
+      {
+       "tool": "Acumen",
+       "weapon": "Avoidant",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Indirect"
+       ]
+      },
+      {
+       "tool": "Caution",
+       "weapon": "Hypochondria",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Indirect"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Salvaging",
+     "pair_weapon": "Greed",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Direct",
+     "sub": [
+      {
+       "tool": "Repurposing",
+       "weapon": "Hoarding",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Direct"
+       ]
+      },
+      {
+       "tool": "Acceptance",
+       "weapon": "Liquidating",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Specific",
+        "Future",
+        "Speculative",
+        "Complex",
+        "Process",
+        "Rigid",
+        "Direct"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Transformation": {
+   "number": 7,
+   "colour": "#995c8e",
+   "poles_whole": [
+    "Indirect",
+    "General",
+    "Future",
+    "Interactive",
+    "Complex",
+    "Flexible"
+   ],
+   "bridge": [
+    "Process",
+    "Result"
+   ],
+   "asset_half_pole": "Process",
+   "risk_half_pole": "Result",
+   "opposite_approaches": [
+    "Initiation",
+    "Deconstruction"
+   ],
+   "asset_half_faces": {
+    "approach": "Initiation",
+    "half": "risk"
+   },
+   "risk_half_faces": {
+    "approach": "Deconstruction",
+    "half": "asset"
+   },
+   "tools": [
+    {
+     "pair_tool": "Attitude",
+     "pair_weapon": "Apathy",
+     "domain": "concrete",
+     "side": "risk",
+     "half_pole": "Result",
+     "sub": [
+      {
+       "tool": "Transcendence",
+       "weapon": "Rationalization",
+       "kind": "interpreted",
+       "symbol": "┌",
+       "function_tag": "Ti",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Result"
+       ]
+      },
+      {
+       "tool": "Reframing",
+       "weapon": "Flippancy",
+       "kind": "raw",
+       "symbol": "□",
+       "function_tag": "Si",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Result"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Fulfillment",
+     "pair_weapon": "Tantrum",
+     "domain": "concrete",
+     "side": "asset",
+     "half_pole": "Process",
+     "sub": [
+      {
+       "tool": "Presence",
+       "weapon": "Entitlement",
+       "kind": "interpreted",
+       "symbol": "┘",
+       "function_tag": "Te",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Process"
+       ]
+      },
+      {
+       "tool": "Gratitude",
+       "weapon": "Naive",
+       "kind": "raw",
+       "symbol": "■",
+       "function_tag": "Se",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Process"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Idealism",
+     "pair_weapon": "Extreme",
+     "domain": "abstract",
+     "side": "risk",
+     "half_pole": "Result",
+     "sub": [
+      {
+       "tool": "Ethics",
+       "weapon": "Dogmatic",
+       "kind": "interpreted",
+       "symbol": "◐",
+       "function_tag": "Fi",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Result"
+       ]
+      },
+      {
+       "tool": "Optimization",
+       "weapon": "Vulgar",
+       "kind": "raw",
+       "symbol": "○",
+       "function_tag": "Ni",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Result"
+       ]
+      }
+     ]
+    },
+    {
+     "pair_tool": "Character",
+     "pair_weapon": "Obsession",
+     "domain": "abstract",
+     "side": "asset",
+     "half_pole": "Process",
+     "sub": [
+      {
+       "tool": "Actualization",
+       "weapon": "Nicheness",
+       "kind": "interpreted",
+       "symbol": "◗",
+       "function_tag": "Fe",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Process"
+       ]
+      },
+      {
+       "tool": "Aspiration",
+       "weapon": "Envy",
+       "kind": "raw",
+       "symbol": "●",
+       "function_tag": "Ne",
+       "defined_by": [
+        "Indirect",
+        "General",
+        "Future",
+        "Interactive",
+        "Complex",
+        "Flexible",
+        "Process"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
