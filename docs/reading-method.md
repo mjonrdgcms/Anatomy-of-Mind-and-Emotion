@@ -48,7 +48,7 @@ For every animal, **ask who the animal is** (which relationship). Then read the 
 
 Serpents are not relationships. They are attention. Read where attention is (on the ground, lifted, sunk), what it has swallowed, and whether it has bitten.
 
-Insects are the heart's guards. Read them as an immune response and ask what breach they are swarming toward.
+Insects are the heart's guards: mindless and protective, good or bad. Ask what they are swarming toward, and whether the thing being protected is a wound or a husk.
 
 ## Step 6. Read the vehicles
 
