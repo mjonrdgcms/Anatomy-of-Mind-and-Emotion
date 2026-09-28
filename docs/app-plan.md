@@ -1,6 +1,14 @@
 # App Plan: A Small, Local, Voice-First Interpreter
 
-The author's brief: the lightest, most stripped-down model that knows no science, history or politics. Voice in, voice out. Runs locally on a phone. Organises what people say into folders so the context window stays small. Standalone and free, in the spirit of a voice-memo app that transcribes and files what you say.
+The author's brief: the lightest, most stripped-down model that knows no science, history or politics. Voice in, voice out. Runs locally on a phone. Organises what people say into folders so the context window stays small. Standalone and free, like Voicebox.
+
+## 0. The reference point: Voicebox
+
+Voicebox (voicebox.sh) is an open-source, local-first voice studio for macOS and Windows: voice cloning from a few seconds of audio, speech generation across several text-to-speech engines (Qwen3-TTS, Kokoro, Chatterbox and others), dictation into any app by hotkey, and a multi-voice timeline. It is free and open source forever, everything runs on the machine, there is no cloud dependency and no limits. It is built as a Tauri and Rust desktop app with a React front end and a Python FastAPI backend.
+
+What this app takes from it: free and open source, local-first, no account, no server, no limits, the model files downloaded once and owned by the user. What is different: Voicebox is a desktop app and speaks in cloned voices; this app is a phone app and its job is to listen, file and read back. Kokoro, one of Voicebox's engines, is also the voice this plan proposes, so the two can sound alike.
+
+Voicebox's stack is a second option for the app framework. Tauri 2 builds for Android and iOS as well as desktop, and the speech and language-model engines exist as Rust crates. Flutter remains the recommendation because the on-device speech and model bindings are more mature there, but a Tauri build would let a desktop version and the phone version share code.
 
 ## 1. The principle: the knowledge lives in the app, not in the model
 
