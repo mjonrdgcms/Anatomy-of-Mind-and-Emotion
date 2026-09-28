@@ -40,7 +40,7 @@ Note compounds: a round silver thing, a river on a mountain, a tree in a kitchen
 
 For every person in the dream, **ask the dreamer for three words that describe that person.** Do not guess. Then read the words as organs of the dreamer's own psyche wearing that face. Check the compression question: does the figure have the person's real range, or has the person been reduced to one function, and what did that reduction let the dream do?
 
-Children: name what was recently born in the dreamer, and read the dream as being about how it is being fed.
+Babies and children: a new part of the dreamer, born where heart and mind came together, more integrated with logic and love than what came before. Name what was recently born, and read the dream as being about how it is being fed.
 
 ## Step 5. Read the animals
 

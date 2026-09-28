@@ -1,30 +1,40 @@
 # Symbols for the Seven Approaches
 
-A proposal, not a finding. It follows the grammar's own rule: begin with what a thing does in relation to a body, then check the association against the particular dream.
+The body register is settled with the author; the rest is a proposal. It follows the grammar's own rule: begin with what a thing does in relation to a body, then check the association against the particular dream.
 
-## The principle
+## The decision
 
-The seven approaches are operations, things a mind does, but the heart runs all seven too (*Beyond Flat Land* ch. 12). The grammar already divides the world by which country a thing belongs to: built things (walls, vehicles, blades, tables) are the mind's; living things (animals) are the heart's; and the body's own organs are the will's, the trunk where the two meet.
+The **body register** is the primary symbol set for the seven. The built forms and animal classes below are kept as secondary vocabulary the interpreter may use, not as a required step.
 
-So each approach should have **three forms** in a dream, and which one appears says which country is carrying the operation:
+The reasoning: everything in a dream is an organ inside the dreamer's own mind and heart. People are organs wearing faces. So the seven operations, which are things the whole person does, belong to the body itself. The body also supplies the count: the seven registers of *Beyond Flat Land* ch. 20 were already one to one with the seven approaches before this proposal.
 
-- a **built form**: the approach as the mind does it, deliberately, with edges;
-- a **living form**: the approach as the heart does it, on its own will, as a class of animal;
-- a **body register**: the approach as the organism feels it, taken from *Beyond Flat Land* ch. 20.
+| Approach | Body register | Why |
+|---|---|---|
+| **Initiation** (recognise and engage; make contact) | **The skin** | The boundary where anything first arrives. Contact happens here or not at all; contempt is felt as the chill and the recoil at the surface. Barefoot on holy ground is skin with nothing built between. |
+| **Deconstruction** (dissect and test; isolate first principles) | **The eye** | Sight brings an edge into view and separates one thing from another. Sadness asks for the boundary of the loss. The beam is in the eye, and the scales fall from the eyes before a man sees. |
+| **Expansion** (analogise and innovate; case to category) | **The tongue** | Taste is sampling before the full account: contact first, interpretation second. Surprise has that quickness. Taste and see. |
+| **Unification** (incorporate and harmonise; a viable present) | **The ear** | Sound arrives into a field already occupied and joins what is there. Who hath ears to hear. Happiness proposes incorporate. |
+| **Implementation** (commit and apply; give up alternatives) | **The muscle, the chest** | The grip and the hold. Anger tightens the chest and proposes hold: hold the line, hold the tongue, hold the boundary. Commitment is felt as tension kept. |
+| **Preservation** (reinforce and insulate; future-proof) | **The stomach and the lungs** | The interior stores: what is taken in and kept against a future. Fear drops the stomach and shortens the breath and proposes take: take cover, take the precaution, take the chance while it exists. |
+| **Transformation** (align and refine; compare process with result; let go) | **The breath of spirit** | The exception in the set: not an organ but what fills it. The breath of life breathed into the nostrils comes from above, as fire from heaven does, and spirit and breath are one word in the scriptural languages. Disgust proposes let go, and the breath is the one thing in the body that is only kept by being released. The lungs hold; the breath moves through. |
 
-Several of the built forms are already assigned in *Four Rivers* (the blade is named as Deconstruction in ch. 11; the rod, wall, table and summit carry their functions throughout). The animal classes are new and the most speculative.
+Two of these are stores (stomach and lungs), one is a grip (muscle), three are senses (skin, eye, tongue, ear count as four, with skin doubling as boundary), and one is the thing that animates the rest. That distribution is itself a reading: Preservation keeps, Implementation holds, the first four take in, and Transformation is what comes down.
 
-## The seven
+## Secondary forms
 
-| Approach | Built form (mind) | Living form (heart) | Body register | Why |
-|---|---|---|---|---|
-| **Initiation** (recognise and engage; make contact) | **The door or gate**; the hook, in its active form | **Fish** | Skin; the reaching hand; bare feet | A door is where something arrives and traffic first passes; the interrupt. Contempt is a gate. A hook is contact cast into water you cannot see into, and the pond chapter is about what makes a fish bite. The fish is the creature that makes contact by biting: "the first fish that comes up." Shoes off is contact with nothing built between. |
-| **Deconstruction** (dissect and test; isolate first principles) | **The blade**; the hammer as the testing blow | **Worms and burrowers** | The eye | *Four Rivers* ch. 11 says it outright: the blade is Deconstruction in its most physical form, logic reduced to an edge, opening the skin so the inside can be seen. Sadness asks for an edge brought into view. Worms dig, open, and break a thing into what it was made of; the unread manna breeds them; they are what is on the hook. |
-| **Expansion** (analogise and innovate; case to category) | **The branches** of the tree; the rainbow, as light spread into its spectrum | **Birds** | The tongue; taste, sampling before the full account | Branches divide and reach out to map the space; a branch is also what the processor speculates down. Birds leave the ground, see the category from above, and lodge in the branches (the mustard seed's promise). Surprise proposes expand; taste is contact first, interpretation second. |
-| **Unification** (incorporate and harmonise; a viable present) | **The table**; the yoke and the threefold cord as its working forms | **Mammals**, the herd, the flock, the household | The ear | The table is where things and people are brought into one present: the altar-table, the sacrament of two elements, the six in the bakery who between them already know. Two under one yoke plough a straight furrow. Mammals are the warm class, fed from a body, huddling; the flock is scripture's word for a man's kept relationships. Happiness proposes incorporate; sound arrives into a shared field. |
-| **Implementation** (commit and apply; give up alternatives) | **The rod or staff**; the plough | **The yoked beast**, the ox | The hand and its grip | A staff is a choice cut to carrying size, a decision a man puts weight on and walks with; Moses strikes the rock with it. Held, it is a tool; dropped, it goes wild on the ground. Hand to the plough and no looking back. The ox is the animal built for the harness, pulling one direction at one aim. Anger proposes hold. |
-| **Preservation** (reinforce and insulate; future-proof) | **The wall**, built of tested stones; the shell as its carried form; the storehouse | **Insects**, the guardians of the heart; the turtle as the single case | The belly and the held breath | The wall is made of thinking that has been tested and found to hold, and it exists so the water has banks. The turtle carries its wall with it. Insects are mindless and protective, good or bad, numberless, arriving wherever something has breached: Preservation running automatically, which is also its excess form, a wall nothing gets through. Fear proposes take, felt in the interior. |
-| **Transformation** (align and refine; compare process with result; let go) | **The summit** and the fixed lights (sun, moon, stars, for signs and seasons); the sabbath as its scheduled form | **Amphibians**; the eagle for the vantage alone | The nose; breath, which is spirit | The trend is only visible from height, and the fixed lights are what stop the walker circling. At the summit the boulder goes into the pit: the letting go that the crest makes possible. The sabbath is the weekly lift of the head. The amphibian is the one creature that changes its form and crosses from the heart's element to the ground; metamorphosis is Transformation's own verb. Disgust proposes let go, and smell announces misalignment before inspection. |
+Kept for vocabulary. Which form appears in a dream may still say which country is carrying the operation: built things are the mind's, living things are the heart's.
+
+| Approach | Built form (mind) | Living form (heart) |
+|---|---|---|
+| Initiation | The door or gate; the hook | Fish |
+| Deconstruction | The blade; the hammer as the test | Worms and burrowers |
+| Expansion | The branches; the rainbow | Birds |
+| Unification | The table; the yoke, the threefold cord | Mammals, the herd and flock |
+| Implementation | The rod or staff; the plough | The yoked beast, the ox |
+| Preservation | The wall of tested stones; the shell; the storehouse | Insects, the guardians; the turtle |
+| Transformation | The summit and the fixed lights; the sabbath | Amphibians; the eagle for the vantage |
+
+*Four Rivers* ch. 11 names the blade as Deconstruction; the rod, wall, table, and summit carry their functions throughout the book. The animal classes are the most speculative layer.
 
 ## How the animal classes sit with the existing grammar
 
