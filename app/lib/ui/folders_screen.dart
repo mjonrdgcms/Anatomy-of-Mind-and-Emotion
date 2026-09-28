@@ -14,6 +14,10 @@ class FoldersScreen extends StatefulWidget {
 
 class _FoldersScreenState extends State<FoldersScreen> {
   Folder? _open;
+  String _query = '';
+
+  Future<List<Entry>> _items(Folder f) =>
+      f == Folder.archive && _query.isNotEmpty ? widget.state.store.search(_query) : widget.state.store.list(f);
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +43,18 @@ class _FoldersScreenState extends State<FoldersScreen> {
           ),
           title: Text(f.label),
         ),
+        if (f == Folder.archive)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: TextField(
+              decoration: const InputDecoration(
+                  hintText: 'Search the archive for something specific', isDense: true),
+              onChanged: (q) => setState(() => _query = q.trim()),
+            ),
+          ),
         Expanded(
           child: FutureBuilder<List<Entry>>(
-            future: widget.state.store.list(f),
+            future: _items(f),
             builder: (context, snap) {
               final items = snap.data ?? const [];
               if (snap.hasData && items.isEmpty) {
@@ -67,7 +80,7 @@ class _FoldersScreenState extends State<FoldersScreen> {
                         setState(() {});
                       },
                       itemBuilder: (_) => [
-                        for (final t in Folder.values)
+                        for (final t in Folder.routable)
                           if (t != f) PopupMenuItem(value: t, child: Text(t.label)),
                       ],
                     ),

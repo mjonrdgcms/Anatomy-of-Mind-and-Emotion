@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:anatomy_app/core/absolutes.dart';
 import 'package:anatomy_app/core/axis.dart';
+import 'package:anatomy_app/core/definitions.dart';
 import 'package:anatomy_app/core/folders.dart';
 import 'package:anatomy_app/core/lexicon.dart';
 import 'package:anatomy_app/core/questions.dart';
@@ -121,12 +123,15 @@ void main() {
       await s.load();
       final t1 = await s.hear(
           'At work today he just steamrolled the plan, he had already done it, total overreach and so stubborn.');
-      expect(t1.question.kind, QuestionKind.whoIsGoodAt);
-      final t2 = await s.hear('Probably my sister Anna, she is good at that.');
-      expect(t2.question.kind, QuestionKind.whatWouldTheyDo);
-      expect(t2.question.about, isNotNull);
+      // A term new to the profile is defined first, in the person's words.
+      expect(t1.question.kind, QuestionKind.definition);
+      final t2 = await s.hear('It is when someone pushes a decision through without asking, like he did with the rota.');
+      expect(t2.question.kind, QuestionKind.whoIsGoodAt);
+      final t3 = await s.hear('Probably my sister Anna, she is good at that.');
+      expect(t3.question.kind, QuestionKind.whatWouldTheyDo);
+      expect(t3.question.about, isNotNull);
       final p = await store.profile();
-      expect(p.reframers.values, contains(t2.question.about));
+      expect(p.reframers.values, contains(t3.question.about));
       final people = await store.list(Folder.people);
       expect(people, isNotEmpty);
     });
@@ -146,6 +151,104 @@ void main() {
       expect(r.taboo, 'Preservation');
       expect(r.loadBearing, ['Unification', 'Implementation']);
       expect((await store.profile()).dislikedWeapons.length, 3);
+    });
+  });
+
+  group('absolutes', () {
+    test('detects absolutes and what they are about', () {
+      final d = AbsoluteDetector(lexicon);
+      final abs = d.detect('He never follows up. Every single time it is a disaster. We had lunch.');
+      expect(abs.length, 2);
+      expect(abs.first.words, contains('never'));
+      expect(abs.first.about.map((e) => e.name), contains('Follow-up'));
+    });
+  });
+
+  group('definitions', () {
+    test('collects phrases per term with co-occurring approaches', () {
+      final c = DefinitionCollector(lexicon, wheel);
+      final text = 'I try to be honest about it. In general the structure matters more than the hope.';
+      final ph = c.extract(text, lexicon.score(text), Folder.waking, DateTime(2026, 9, 1));
+      final terms = ph.map((p) => p.term).toSet();
+      expect(terms, contains('Honesty'));
+      expect(terms, contains('General'));
+      final honesty = ph.firstWhere((p) => p.term == 'Honesty');
+      expect(honesty.approach, 'Implementation');
+    });
+
+    test('a broad definition with no boundary on a lived approach is a panacea', () {
+      final a = DefinitionAnalysis(wheel);
+      final reading = Taboo(wheel).read(
+          dislikedWeapons: ['Tyranny', 'Nosey', 'Enmeshment'],
+          favourites: ['Deconstruction', 'Preservation', 'Implementation']);
+      final unseen = Taboo(wheel).unseen(reading);
+      final phrases = [
+        for (var i = 0; i < 5; i++)
+          Phrase(
+            term: 'Honesty',
+            kind: 'tool',
+            approach: 'Implementation',
+            text: 'honesty is what matters here',
+            created: DateTime(2026, 1, 1).add(Duration(days: 7 * i)),
+            folder: Folder.values[i % 4],
+            coApproaches: const ['Preservation'],
+          ),
+      ];
+      final s = a.summarise('Honesty', phrases, reading: reading, unseen: unseen);
+      expect(s.isPanacea, isTrue);
+      expect(s.breadth, greaterThanOrEqualTo(4));
+      expect(unseen, contains(s.spaceTaken));
+      final bounded = [
+        ...phrases,
+        Phrase(
+          term: 'Honesty',
+          kind: 'tool',
+          approach: 'Implementation',
+          text: 'honesty does not apply when someone is grieving',
+          created: DateTime(2026, 3, 1),
+          folder: Folder.waking,
+          coApproaches: const [],
+          isBoundary: true,
+        ),
+      ];
+      expect(a.summarise('Honesty', bounded, reading: reading, unseen: unseen).isPanacea, isFalse);
+    });
+  });
+
+  group('context', () {
+    test('archives the transcript outside the folders and keeps three focus items', () async {
+      final store = MemoryStore();
+      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final t = await s.hear(
+          'At work I stay honest and keep the structure, and I am diligent about it, whatever the pessimism around me.');
+      expect((await store.list(Folder.archive)).length, 1);
+      expect((await store.recent()).any((e) => e.folder == Folder.archive), isFalse);
+      expect(t.context.items.length, lessThanOrEqualTo(3));
+      expect(t.context.items, isNotEmpty);
+      expect(t.context.toPrompt(), contains('open question'));
+      expect((await store.search('diligent')).length, 1);
+      expect((await store.search('unicorn')), isEmpty);
+    });
+
+    test('an absolute gets the exception question, then the proportion', () async {
+      final store = MemoryStore();
+      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final t1 = await s.hear('She never follows up, not once.');
+      expect(t1.question.kind, QuestionKind.exception);
+      expect(t1.question.about, 'Follow-up');
+      expect((await store.list(Folder.absolutes)), isNotEmpty);
+      final t2 = await s.hear('Well, honestly it is always the same, every single time.');
+      expect(t2.question.kind, QuestionKind.proportion);
+    });
+
+    test('a new focus term gets the definition question', () async {
+      final store = MemoryStore();
+      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final t = await s.hear('I did some budgeting for the trip and it went fine.');
+      expect(t.question.kind, QuestionKind.definition);
+      final t2 = await s.hear('It means I set the amount first and stick to it, last week for the car.');
+      expect((await store.phrasesFor(t.question.about!)).length, greaterThanOrEqualTo(2));
+      expect(t2.question.kind, isNot(QuestionKind.definition));
     });
   });
 }

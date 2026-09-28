@@ -1,3 +1,4 @@
+import 'definitions.dart';
 import 'folders.dart';
 
 /// One filed passage.
@@ -68,6 +69,16 @@ class Profile {
 
 abstract class Store {
   Future<int> add(Entry e);
+
+  /// The whole transcript, as spoken. Never loaded into context.
+  Future<int> archive(String transcript, DateTime when);
+
+  /// Search the archive for something specific.
+  Future<List<Entry>> search(String query, {int limit = 20});
+
+  Future<void> addPhrases(List<Phrase> phrases);
+  Future<List<Phrase>> phrasesFor(String term);
+  Future<Map<String, List<Phrase>>> allPhrases();
   Future<List<Entry>> list(Folder f, {int limit = 50});
   Future<List<Entry>> recent({int limit = 20});
   Future<List<Entry>> byPerson(String person);
@@ -80,8 +91,40 @@ abstract class Store {
 /// In-memory store, used by tests and as a fallback.
 class MemoryStore implements Store {
   final List<Entry> _entries = [];
+  final List<Phrase> _phrases = [];
   Profile _profile = Profile();
   int _next = 1;
+
+  @override
+  Future<int> archive(String transcript, DateTime when) =>
+      add(Entry(folder: Folder.archive, text: transcript, created: when));
+
+  @override
+  Future<List<Entry>> search(String query, {int limit = 20}) async {
+    final q = query.toLowerCase();
+    return _entries
+        .where((e) => e.folder == Folder.archive && e.text.toLowerCase().contains(q))
+        .toList()
+        .reversed
+        .take(limit)
+        .toList();
+  }
+
+  @override
+  Future<void> addPhrases(List<Phrase> phrases) async => _phrases.addAll(phrases);
+
+  @override
+  Future<List<Phrase>> phrasesFor(String term) async =>
+      _phrases.where((p) => p.term == term).toList();
+
+  @override
+  Future<Map<String, List<Phrase>>> allPhrases() async {
+    final out = <String, List<Phrase>>{};
+    for (final p in _phrases) {
+      out.putIfAbsent(p.term, () => []).add(p);
+    }
+    return out;
+  }
 
   @override
   Future<int> add(Entry e) async {
@@ -105,7 +148,7 @@ class MemoryStore implements Store {
 
   @override
   Future<List<Entry>> recent({int limit = 20}) async =>
-      _entries.reversed.take(limit).toList();
+      _entries.where((e) => e.folder != Folder.archive).toList().reversed.take(limit).toList();
 
   @override
   Future<List<Entry>> byPerson(String person) async => _entries

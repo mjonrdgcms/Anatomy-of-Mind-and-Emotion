@@ -25,6 +25,10 @@ enum QuestionKind {
   competentUse, // what the competent use of the tool would look like
   whoseEyes, // whose eyes are you seeing this through
   criterion, // the one thing to watch for and when to re-check
+  exception, // when was a time it went differently
+  proportion, // out of the last ten times, how many
+  definition, // what does X mean when you use it; the last time
+  boundary, // where does X not apply
   dislikedWeapons, // the survey
   favourites, // the favourite three
   open, // say more
@@ -99,6 +103,30 @@ class QuestionBank {
       );
 
   Question open() => Question(QuestionKind.open, 'Say more about that.');
+
+  Question exception(String? term) => Question(
+        QuestionKind.exception,
+        'When was a time it went differently?',
+        about: term,
+      );
+
+  Question proportion(String? term) => Question(
+        QuestionKind.proportion,
+        'Out of the last ten times, how many went that way?',
+        about: term,
+      );
+
+  Question definition(String term) => Question(
+        QuestionKind.definition,
+        'When you say $term, what does it mean for you? Tell me the last time it came up.',
+        about: term,
+      );
+
+  Question boundary(String term) => Question(
+        QuestionKind.boundary,
+        'Where does $term not apply?',
+        about: term,
+      );
 
   /// Pick the next question for one passage. [named] is a person mentioned
   /// in the passage, if the router found one. [reframers] maps approaches to

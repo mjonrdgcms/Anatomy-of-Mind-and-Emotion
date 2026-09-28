@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_state.dart';
 import 'ui/folders_screen.dart';
-import 'ui/people_screen.dart';
+import 'ui/profile_screen.dart';
 import 'ui/survey_screen.dart';
 import 'ui/talk_screen.dart';
 
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
     final pages = [
       TalkScreen(state: widget.state),
       FoldersScreen(state: widget.state),
-      PeopleScreen(state: widget.state),
+      ProfileScreen(state: widget.state),
       SurveyScreen(state: widget.state),
     ];
     return Scaffold(
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
         destinations: const [
           NavigationDestination(icon: Icon(Icons.mic), label: 'Talk'),
           NavigationDestination(icon: Icon(Icons.folder), label: 'Folders'),
-          NavigationDestination(icon: Icon(Icons.people), label: 'People'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
           NavigationDestination(icon: Icon(Icons.tune), label: 'Wheel'),
         ],
       ),

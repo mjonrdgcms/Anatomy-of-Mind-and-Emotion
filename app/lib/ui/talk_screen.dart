@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../core/context.dart';
 import '../core/session.dart';
 
 /// Listen, file, ask one question, wait.
@@ -18,6 +19,8 @@ class _TalkScreenState extends State<TalkScreen> {
   String _partial = '';
   bool _listening = false;
   bool _busy = false;
+  WorkingContext? _ctx;
+  bool _showCtx = false;
 
   Future<void> _toggle() async {
     if (_listening) {
@@ -64,6 +67,7 @@ class _TalkScreenState extends State<TalkScreen> {
         : turn.filed.map((e) => e.folder.label).toSet().join(', ');
     setState(() {
       _busy = false;
+      _ctx = turn.context;
       _log.add(_Line(turn.question.text, fromUser: false, note: filedNote));
     });
     await widget.state.speaker.say(turn.question.text);
@@ -79,6 +83,25 @@ class _TalkScreenState extends State<TalkScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        if (_ctx != null)
+          ListTile(
+            dense: true,
+            leading: const Icon(Icons.center_focus_strong, size: 18),
+            title: Text(
+              _ctx!.items.isEmpty
+                  ? 'Focus: nothing yet'
+                  : 'Focus: ${_ctx!.items.map((f) => f.entry.name).join(', ')}',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            trailing: Icon(_showCtx ? Icons.expand_less : Icons.expand_more),
+            onTap: () => setState(() => _showCtx = !_showCtx),
+          ),
+        if (_ctx != null && _showCtx)
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Text(_ctx!.toPrompt(), style: Theme.of(context).textTheme.bodySmall),
+          ),
         Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.all(16),

@@ -2,6 +2,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../core/definitions.dart';
 import '../core/folders.dart';
 import '../core/store.dart';
 
@@ -25,6 +26,13 @@ class DbStore implements Store {
             person TEXT, animal TEXT, approach TEXT, note TEXT)''');
         await db.execute('CREATE INDEX entries_folder ON entries(folder)');
         await db.execute('CREATE TABLE kv(k TEXT PRIMARY KEY, v TEXT NOT NULL)');
+        await db.execute('''
+          CREATE TABLE phrases(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            term TEXT NOT NULL, kind TEXT NOT NULL, approach TEXT NOT NULL,
+            text TEXT NOT NULL, created TEXT NOT NULL, folder TEXT NOT NULL,
+            co TEXT, boundary INTEGER NOT NULL DEFAULT 0)''');
+        await db.execute('CREATE INDEX phrases_term ON phrases(term)');
       },
     );
     return DbStore._(db);
@@ -42,8 +50,49 @@ class DbStore implements Store {
 
   @override
   Future<List<Entry>> recent({int limit = 20}) async {
-    final rows = await _db.query('entries', orderBy: 'id DESC', limit: limit);
+    final rows = await _db.query('entries',
+        where: 'folder != ?', whereArgs: [Folder.archive.name], orderBy: 'id DESC', limit: limit);
     return rows.map(Entry.fromMap).toList();
+  }
+
+  @override
+  Future<int> archive(String transcript, DateTime when) =>
+      add(Entry(folder: Folder.archive, text: transcript, created: when));
+
+  @override
+  Future<List<Entry>> search(String query, {int limit = 20}) async {
+    final rows = await _db.query('entries',
+        where: 'folder = ? AND text LIKE ?',
+        whereArgs: [Folder.archive.name, '%$query%'],
+        orderBy: 'id DESC',
+        limit: limit);
+    return rows.map(Entry.fromMap).toList();
+  }
+
+  @override
+  Future<void> addPhrases(List<Phrase> phrases) async {
+    final batch = _db.batch();
+    for (final p in phrases) {
+      batch.insert('phrases', p.toMap()..remove('id'));
+    }
+    await batch.commit(noResult: true);
+  }
+
+  @override
+  Future<List<Phrase>> phrasesFor(String term) async {
+    final rows = await _db.query('phrases', where: 'term = ?', whereArgs: [term], orderBy: 'id');
+    return rows.map(Phrase.fromMap).toList();
+  }
+
+  @override
+  Future<Map<String, List<Phrase>>> allPhrases() async {
+    final rows = await _db.query('phrases', orderBy: 'id');
+    final out = <String, List<Phrase>>{};
+    for (final r in rows) {
+      final p = Phrase.fromMap(r);
+      out.putIfAbsent(p.term, () => []).add(p);
+    }
+    return out;
   }
 
   @override

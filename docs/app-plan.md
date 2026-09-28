@@ -99,3 +99,7 @@ Each stage ships on its own. The books' worked dreams become the test set at sta
 - **Platform first.** Android can be built and installed free. iOS needs an Apple developer account to put on the App Store. Recommendation: build in Flutter so both come from one codebase, and test on Android first.
 - **The exact small model.** To be chosen by testing routing accuracy on real transcripts, smallest model that passes wins.
 - **Whether transcript tidying needs the model at all.** Modern on-device recognisers punctuate; rules may be enough.
+
+## 8. Context and definitions (added)
+
+The folder table in section 2 is superseded by `docs/context-and-definitions.md`: transcripts go whole into a searchable Archive that is never in context; the working context is the three tools or weapons currently referenced plus a summary of the open question about each; a Definitions store keeps the person's own phrases about every approach, pole, tool and weapon; an Absolutes store keeps every black-and-white statement.
