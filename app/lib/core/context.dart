@@ -13,9 +13,11 @@ class FocusItem {
 }
 
 class WorkingContext {
-  WorkingContext(this.items, {this.lastAbsolute});
+  WorkingContext(this.items, {this.pendingFallacies = const []});
   final List<FocusItem> items;
-  final String? lastAbsolute;
+
+  /// Names of fallacies recorded and not yet worked, most urgent first.
+  final List<String> pendingFallacies;
 
   /// The compact form handed to a model, or shown on screen.
   String toPrompt() {
@@ -37,7 +39,7 @@ class WorkingContext {
           '${f.summary.isBlindSpot ? ", blind spot" : ""}');
       b.writeln('  open question: ${f.openQuestion}');
     }
-    if (lastAbsolute != null) b.writeln('last absolute: "$lastAbsolute"');
+    if (pendingFallacies.isNotEmpty) b.writeln('pending, not yet raised: ${pendingFallacies.join("; ")}');
     return b.toString().trimRight();
   }
 }

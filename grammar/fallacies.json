@@ -1,0 +1,446 @@
+{
+ "_notes": "Fallacies the app records silently and provokes later (docs/context-and-definitions.md, section 5). side: 'logic' means the mind was bypassed; 'meaning' means the heart was. The author will add meaningful fallacies. cues are case-insensitive regular expressions over one sentence; chain is the sequence of questions asked, one per turn, once the person asks the app something.",
+ "fallacies": [
+  {
+   "id": "double_standard",
+   "name": "Double standard",
+   "side": "meaning",
+   "description": "One rule for me, another for them. The main meaningful fallacy.",
+   "cues": [
+    "\\b(when|if) i\\b.{0,60}\\b(but|whereas|while|and)\\b.{0,20}\\b(when|if) (he|she|they)\\b",
+    "\\bthat'?s not the same\\b",
+    "\\bi had (a|my|good) reasons?\\b",
+    "\\b(he|she|they) should (have )?known better\\b",
+    "\\bi would never\\b.{0,60}\\b(but|and) (he|she|they)\\b",
+    "\\b(he|she|they) (always|never)\\b.{0,60}\\b(i|me) (only|just)\\b",
+    "\\bin (his|her|their) case\\b",
+    "\\b(it|that)('?s| is| was) different (when|because|for|with|in my case)\\b",
+    "\\b(it|that)('?s| is| was) different\\b(?! from)"
+   ],
+   "chain": [
+    "What would it look like if we reversed the roles? What would you do in their situation?",
+    "And what are all the reasons that person wouldn't see it the way you do?",
+    "Having listed those, what, if anything, looks different about the original situation?"
+   ],
+   "source": "author",
+   "approach": null
+  },
+  {
+   "id": "ledger",
+   "name": "Weaponised togetherness (the ledger)",
+   "side": "meaning",
+   "description": "The relationship or a past gift produced as an instrument: after everything I have done.",
+   "cues": [
+    "\\bafter (everything|all) (i|we)('ve| have)? (done|been)\\b",
+    "\\bafter all i('ve| have) done\\b",
+    "\\bi('ve| have) (given|sacrificed) (so much|everything)\\b",
+    "\\bowes? me\\b",
+    "\\bkeep(ing)? score\\b"
+   ],
+   "chain": [
+    "When it was given, what did you want it to be?",
+    "What would the relationship look like if neither side kept the score?"
+   ],
+   "source": "Beyond Flat Land ch. 13; Four Rivers on milk turned to debt",
+   "approach": "Unification"
+  },
+  {
+   "id": "just_doing",
+   "name": "Reduction to one mechanism",
+   "side": "meaning",
+   "description": "The whole person reduced to one mechanism: you're just doing X.",
+   "cues": [
+    "\\b(he|she|they|you)('s| is| are|'re)? just (doing|being|trying to|after|jealous|lazy|angry)\\b",
+    "\\b(he|she|they)('s| is| are|'re) (a|an|such a) (narcissist|idiot|liar|control freak|coward|loser|bully|manipulator)\\b",
+    "\\btypical (of )?(him|her|them|man|woman)\\b",
+    "\\bthat'?s (so|just) (like|typical of) (him|her|them)\\b"
+   ],
+   "chain": [
+    "What three words come to mind for them?",
+    "What was the last thing they did that did not fit those words?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Deconstruction)",
+   "approach": "Deconstruction"
+  },
+  {
+   "id": "kitchen_sink",
+   "name": "Kitchen-sinking",
+   "side": "meaning",
+   "description": "Many grievances fused into one generalisation that is not a claim.",
+   "cues": [
+    "\\band another thing\\b",
+    "\\bnot to mention\\b.{0,40}\\b(and|plus|also)\\b",
+    "\\bon top of (that|everything)\\b",
+    "\\bthe list goes on\\b"
+   ],
+   "chain": [
+    "Which one of those is the one that matters most today?",
+    "If only that one were fixed, what would be left?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Expansion)",
+   "approach": "Expansion"
+  },
+  {
+   "id": "freeze_out",
+   "name": "The freeze-out",
+   "side": "meaning",
+   "description": "The wall goes up, the account is closed, the ground is salted.",
+   "cues": [
+    "\\bi('m| am) done with (him|her|them|it)\\b",
+    "\\bnever (speaking|talking) to (him|her|them) again\\b",
+    "\\bdead to me\\b",
+    "\\bcut (him|her|them) off\\b",
+    "\\bthat'?s it,? (i'm|we're) (done|finished)\\b"
+   ],
+   "chain": [
+    "What would have to be true for the door to open again?",
+    "Who do you know who would keep a gate in that wall, and what would they do?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Preservation)",
+   "approach": "Preservation"
+  },
+  {
+   "id": "already_done",
+   "name": "The unilateral fact",
+   "side": "meaning",
+   "description": "The decision announced as already made: I've already done it.",
+   "cues": [
+    "\\bi('ve| have)? already (done|decided|told|sent|booked|signed) (it|them|him|her)\\b",
+    "\\btoo late (now|to change)\\b",
+    "\\bit'?s (done|decided),? end of\\b"
+   ],
+   "chain": [
+    "Who else had a stake in that decision?",
+    "What would they say they lost by not being asked?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Implementation)",
+   "approach": "Implementation"
+  },
+  {
+   "id": "whole_thing",
+   "name": "The zoom-out that erases the complaint",
+   "side": "meaning",
+   "description": "This proves the whole relationship was a mistake.",
+   "cues": [
+    "\\b(this|that|it) proves\\b.{0,40}\\b(whole|entire|everything|always)\\b",
+    "\\bthe whole (thing|relationship|marriage|job) (was|is) a (mistake|lie|waste)\\b",
+    "\\bit was all (a lie|for nothing|fake)\\b",
+    "\\bwhat'?s the point of any of it\\b"
+   ],
+   "chain": [
+    "What is the actual complaint underneath, in one sentence?",
+    "When did that one thing last go well?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Transformation)",
+   "approach": "Transformation"
+  },
+  {
+   "id": "charm",
+   "name": "Charm at the wrong moment",
+   "side": "meaning",
+   "description": "The charm turned on hard at the exact moment charm is an insult.",
+   "cues": [
+    "\\bi (just )?(smoothed|charmed|talked) (it|my way|them) (over|out of|round|around)\\b",
+    "\\bturned on the charm\\b",
+    "\\bmade a joke of it\\b"
+   ],
+   "chain": [
+    "What did the other person need at that moment?",
+    "What would it have cost to give them that instead?"
+   ],
+   "source": "Beyond Flat Land ch. 13 (shadow Initiation)",
+   "approach": "Initiation"
+  },
+  {
+   "id": "overgeneralization",
+   "name": "Overgeneralisation (absolutes)",
+   "side": "logic",
+   "description": "Always, never, everyone, nobody: a definition that divides by zero.",
+   "cues": [
+    "\\b(always|never|everyone|everybody|no ?one|nobody|everything|nothing|every (single )?time|all the time|not once|without exception|every ?one of them|none of them|all of them)\\b",
+    "\\b(all|every) (men|women|people|bosses|doctors|kids|parents|managers|customers)\\b"
+   ],
+   "chain": [
+    "When was a time it went differently?",
+    "Out of the last ten times, how many went that way?"
+   ],
+   "source": "author (calculus: reduce the divisor)",
+   "approach": null
+  },
+  {
+   "id": "false_dilemma",
+   "name": "False dilemma",
+   "side": "logic",
+   "description": "Only two options offered when more exist.",
+   "cues": [
+    "\\beither\\b.{0,60}\\bor\\b",
+    "\\bthe only (option|choice|way|thing i can do)\\b",
+    "\\b(no|there'?s no) (other )?(choice|option|alternative)\\b",
+    "\\bif (i|we) don'?t\\b.{0,40}\\bthen\\b",
+    "\\bit'?s (this|that) or nothing\\b"
+   ],
+   "chain": [
+    "If both of those were off the table, what would be left?",
+    "Who do you know who would find a third way here, and what would they do?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "catastrophising",
+   "name": "Catastrophising",
+   "side": "logic",
+   "description": "The worst case treated as the certain case.",
+   "cues": [
+    "\\b(disaster|catastrophe|ruined|the end of|worst thing|can'?t (cope|survive|handle|bear)|unbearable|devastat(ed|ing)|falling apart)\\b",
+    "\\bit'?ll (all )?(fall apart|be over|go wrong)\\b"
+   ],
+   "chain": [
+    "Out of ten, what number would you put on that happening?",
+    "What would you watch for that would tell you it is actually going that way, and when will you check?"
+   ],
+   "source": "Alphas and Postpartum: the alarm, the criterion, the re-check time",
+   "approach": null
+  },
+  {
+   "id": "slippery_slope",
+   "name": "Slippery slope",
+   "side": "logic",
+   "description": "A chain of consequences asserted without the steps.",
+   "cues": [
+    "\\bnext thing you know\\b",
+    "\\bbefore (you|we|i) know it\\b",
+    "\\b(and )?then (eventually|soon|before long)\\b.{0,40}\\b(will|would|'ll)\\b",
+    "\\bit (will|would) (only )?(lead to|end (up )?(in|with)|snowball)\\b",
+    "\\bwhere does it (end|stop)\\b"
+   ],
+   "chain": [
+    "What would have to happen between here and there?",
+    "Which of those steps is the least certain?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "mind_reading",
+   "name": "Mind reading",
+   "side": "logic",
+   "description": "Knowing what another person thinks or intends without their saying so.",
+   "cues": [
+    "\\b(he|she|they) (think|thinks|believe|believes|want|wants|meant|is|are|was|were) (just )?(trying to|out to|making me|doing it to|doing this to)\\b",
+    "\\b(he|she|they) (obviously|clearly|probably) (think|thinks|want|wants|hate|hates|doesn'?t care|don'?t care)\\b",
+    "\\bi know (exactly )?what (he|she|they)('s| is| are|'re) (thinking|after|up to)\\b",
+    "\\b(he|she|they) did it (on purpose|deliberately|to (spite|hurt|get at) me)\\b"
+   ],
+   "chain": [
+    "What did they actually say or do?",
+    "What are all the other reasons someone might do that?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "fortune_telling",
+   "name": "Fortune telling",
+   "side": "logic",
+   "description": "A future outcome asserted as known.",
+   "cues": [
+    "\\b(it|this|that|he|she|they)('s| is| are|'ll| will) (going to|gonna|bound to|definitely going to|never going to)\\b",
+    "\\bthere'?s no way (it|this|that|he|she|they)('ll| will)?\\b",
+    "\\bi (just )?know (it|this|that)('s| is| will)\\b"
+   ],
+   "chain": [
+    "Out of ten, what number would you put on that?",
+    "What is the earliest sign that it is going the other way?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "should",
+   "name": "Should statements",
+   "side": "logic",
+   "description": "A rule applied as if it were a law of nature.",
+   "cues": [
+    "\\b(should('ve| have)|shouldn'?t have|ought to have|(was|were) supposed to|must (always|never)|mustn'?t ever)\\b"
+   ],
+   "chain": [
+    "Whose rule is that?",
+    "What would happen if it were not followed this once?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "sunk_cost",
+   "name": "Sunk cost",
+   "side": "logic",
+   "description": "Continuing because of what has already been spent.",
+   "cues": [
+    "\\b(after|with) (all|everything) (i|we)('ve| have) (put in|invested|spent)\\b",
+    "\\bcome this far\\b",
+    "\\btoo (late|far in) to (stop|quit|change|turn back)\\b",
+    "\\bcan'?t (waste|throw away) (all )?(that|those|the) (years|money|time|work)\\b"
+   ],
+   "chain": [
+    "If you were starting today, with nothing spent, what would you choose?",
+    "What is the cost from here forward, leaving the past out of it?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "popularity",
+   "name": "Appeal to popularity",
+   "side": "logic",
+   "description": "True because many people say so.",
+   "cues": [
+    "\\beveryone (knows|says|thinks|agrees|does)\\b",
+    "\\beverybody (knows|says|thinks|agrees|does)\\b",
+    "\\bnobody (would|does|thinks)\\b",
+    "\\bit'?s common knowledge\\b",
+    "\\bwho (wouldn'?t|doesn'?t)\\b"
+   ],
+   "chain": [
+    "Who specifically?",
+    "What does the person who disagrees say?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "authority",
+   "name": "Appeal to authority",
+   "side": "logic",
+   "description": "True because someone with standing said so.",
+   "cues": [
+    "\\b(experts|scientists|doctors|studies|research|the science) (say|says|show|shows|prove|proves)\\b",
+    "\\b(my|the) (doctor|therapist|pastor|boss|teacher|lawyer) (said|says|told me)\\b.{0,30}\\bso\\b"
+   ],
+   "chain": [
+    "What did they actually see that led them to that?",
+    "What would change their mind?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "post_hoc",
+   "name": "Post hoc",
+   "side": "logic",
+   "description": "After this, therefore because of this.",
+   "cues": [
+    "\\bever since\\b.{0,60}\\b(it'?s|things have|he'?s|she'?s|they'?ve) (been|gone|got)\\b",
+    "\\bthe (minute|moment|second) (i|he|she|they|we)\\b.{0,40}\\b(everything|it all)\\b",
+    "\\bright after\\b.{0,40}\\b(started|began|stopped)\\b"
+   ],
+   "chain": [
+    "What else changed around the same time?",
+    "Has the second thing ever happened without the first?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "personalization",
+   "name": "Personalisation",
+   "side": "logic",
+   "description": "Everything that happened is because of me.",
+   "cues": [
+    "\\b(it'?s|it is|it was) (all )?my fault\\b",
+    "\\bbecause of me\\b",
+    "\\bif (only )?i had(n'?t)?\\b.{0,40}\\b(none|wouldn'?t|would never)\\b",
+    "\\bi (ruined|caused|made) (it|this|everything|that)\\b"
+   ],
+   "chain": [
+    "What part of that was within your control, and what part was not?",
+    "Who else had a hand in it?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "emotional_reasoning",
+   "name": "Emotional reasoning",
+   "side": "logic",
+   "description": "I feel it, so it is true.",
+   "cues": [
+    "\\bi feel (like|that) (it|he|she|they|this) (must|has to|is|are|will)\\b",
+    "\\bit feels (true|like the truth|right,? so)\\b",
+    "\\bmy gut (says|tells me)\\b.{0,30}\\bso\\b"
+   ],
+   "chain": [
+    "What is the feeling, and what is the evidence, kept separate?",
+    "When did the feeling last turn out to be wrong?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "tu_quoque",
+   "name": "Tu quoque (what about you)",
+   "side": "logic",
+   "description": "Answering a point by pointing at the other person's conduct.",
+   "cues": [
+    "\\b(look who'?s talking|you'?re one to talk|what about (you|when you|the time you)|pot calling the kettle)\\b",
+    "\\b(he|she|they) (did|do) (it|the same|worse) too\\b",
+    "\\bat least i\\b"
+   ],
+   "chain": [
+    "If someone else had said the same thing, what would you make of it?",
+    "Is the point true on its own, leaving aside who said it?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "labeling",
+   "name": "Labeling (self)",
+   "side": "logic",
+   "description": "A single failure turned into an identity.",
+   "cues": [
+    "\\bi('m| am) (a|an|such a|just a) (failure|idiot|loser|mess|bad (mother|father|parent|person|friend)|coward|fraud|disaster)\\b",
+    "\\bi('m| am) (useless|worthless|hopeless|pathetic|stupid)\\b"
+   ],
+   "chain": [
+    "What is the specific thing that happened, without the label?",
+    "What would you say to a friend who did the same thing?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "loaded_question",
+   "name": "Loaded question",
+   "side": "logic",
+   "description": "A question that assumes what it asks.",
+   "cues": [
+    "\\bwhy (do|does|did|is|are) (he|she|they|you) (always|never|have to|keep)\\b",
+    "\\bwhy (am|are) i (always|never|the one)\\b"
+   ],
+   "chain": [
+    "What is the assumption inside that question?",
+    "When was a time that assumption did not hold?"
+   ],
+   "source": null,
+   "approach": null
+  },
+  {
+   "id": "straw_man",
+   "name": "Straw man",
+   "side": "logic",
+   "description": "Answering a weaker version of what was said.",
+   "cues": [
+    "\\bso (what )?you'?re saying is\\b",
+    "\\bin other words (he|she|they|you) (think|thinks|want|wants)\\b",
+    "\\bbasically (he|she|they)('s| is| are|'re) saying\\b"
+   ],
+   "chain": [
+    "What would they say they meant?",
+    "What is the strongest version of their point?"
+   ],
+   "source": null,
+   "approach": null
+  }
+ ]
+}

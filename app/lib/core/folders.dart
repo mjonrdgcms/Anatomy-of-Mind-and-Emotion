@@ -9,7 +9,7 @@ enum Folder {
   waking,
   alarms,
   profile,
-  absolutes,
+  fallacies,
   archive,
   loose;
 
@@ -21,15 +21,15 @@ enum Folder {
         Folder.waking => 'Waking life',
         Folder.alarms => 'Alarms',
         Folder.profile => 'Approach profile',
-        Folder.absolutes => 'Absolutes',
+        Folder.fallacies => 'Fallacies',
         Folder.archive => 'Archive',
         Folder.loose => 'Loose',
       };
 
-  /// Folders the router may file into. Archive and Absolutes are written
+  /// Folders the router may file into. Archive and Fallacies are written
   /// by the session, never by routing.
   static List<Folder> get routable =>
-      values.where((f) => f != archive && f != absolutes && f != profile).toList();
+      values.where((f) => f != archive && f != fallacies && f != profile).toList();
 }
 
 /// A rule-based router. A small language model can replace [route] later;

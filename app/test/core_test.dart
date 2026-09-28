@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:anatomy_app/core/absolutes.dart';
 import 'package:anatomy_app/core/axis.dart';
 import 'package:anatomy_app/core/definitions.dart';
+import 'package:anatomy_app/core/fallacies.dart';
 import 'package:anatomy_app/core/folders.dart';
 import 'package:anatomy_app/core/lexicon.dart';
 import 'package:anatomy_app/core/questions.dart';
@@ -15,6 +15,9 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   final wheel = Wheel.fromJson(File('assets/grammar/approaches.json').readAsStringSync());
   final lexicon = Lexicon.fromJson(File('assets/grammar/lexicon.json').readAsStringSync());
+  final catalogue = FallacyCatalogue.fromJson(File('assets/grammar/fallacies.json').readAsStringSync());
+  Session newSession(MemoryStore store) => Session(
+      wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store, catalogue: catalogue);
 
   group('wheel', () {
     test('loads seven approaches with eight tools each', () {
@@ -119,7 +122,7 @@ void main() {
   group('session', () {
     test('asks who is good at the missing axis, then what they would do', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final s = newSession(store);
       await s.load();
       final t1 = await s.hear(
           'At work today he just steamrolled the plan, he had already done it, total overreach and so stubborn.');
@@ -138,7 +141,7 @@ void main() {
 
     test('never asks the identical question twice running', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final s = newSession(store);
       final a = await s.hear('Nothing much happened, it was quiet.');
       final b = await s.hear('Nothing much happened, it was quiet.');
       expect(a.question.text == b.question.text, isFalse);
@@ -146,7 +149,7 @@ void main() {
 
     test('survey stores favourites and dislikes', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final s = newSession(store);
       final r = await s.survey(dislikedWeapons: ['Greed', 'Cowardice', 'Pessimism'], favourites: ['Unification']);
       expect(r.taboo, 'Preservation');
       expect(r.loadBearing, ['Unification', 'Implementation']);
@@ -154,13 +157,29 @@ void main() {
     });
   });
 
-  group('absolutes', () {
-    test('detects absolutes and what they are about', () {
-      final d = AbsoluteDetector(lexicon);
-      final abs = d.detect('He never follows up. Every single time it is a disaster. We had lunch.');
-      expect(abs.length, 2);
-      expect(abs.first.words, contains('never'));
-      expect(abs.first.about.map((e) => e.name), contains('Follow-up'));
+  group('fallacies', () {
+    final d = FallacyDetector(catalogue, lexicon);
+    test('detects an overgeneralisation and what it is about', () {
+      final hits = d.detect('He never follows up. We had lunch.', DateTime(2026));
+      expect(hits.length, 1);
+      expect(hits.first.fallacy.id, 'overgeneralization');
+      expect(hits.first.about.map((e) => e.name), contains('Follow-up'));
+    });
+    test('detects the double standard and keeps the context', () {
+      final text = 'I was late because the traffic was terrible. When I am late it is different, but when she is late she just does not care.';
+      final hits = d.detect(text, DateTime(2026));
+      expect(hits.map((h) => h.fallacy.id), contains('double_standard'));
+      expect(hits.first.context, text);
+    });
+    test('a double standard comes before a logical fallacy', () {
+      final hits = d.detect('Everyone knows that. It is different when I do it.', DateTime(2026));
+      hits.sort((a, b) => fallacyPriority(a).compareTo(fallacyPriority(b)));
+      expect(hits.first.fallacy.id, 'double_standard');
+    });
+    test('knows when the person asks the app', () {
+      expect(asksTheApp('What do you think I should do?'), isTrue);
+      expect(asksTheApp('Am I wrong here'), isTrue);
+      expect(asksTheApp('Then we went home.'), isFalse);
     });
   });
 
@@ -218,7 +237,7 @@ void main() {
   group('context', () {
     test('archives the transcript outside the folders and keeps three focus items', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final s = newSession(store);
       final t = await s.hear(
           'At work I stay honest and keep the structure, and I am diligent about it, whatever the pessimism around me.');
       expect((await store.list(Folder.archive)).length, 1);
@@ -230,20 +249,45 @@ void main() {
       expect((await store.search('unicorn')), isEmpty);
     });
 
-    test('an absolute gets the exception question, then the proportion', () async {
+    test('a fallacy is recorded silently and worked only when the person asks', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
-      final t1 = await s.hear('She never follows up, not once.');
-      expect(t1.question.kind, QuestionKind.exception);
-      expect(t1.question.about, 'Follow-up');
-      expect((await store.list(Folder.absolutes)), isNotEmpty);
-      final t2 = await s.hear('Well, honestly it is always the same, every single time.');
-      expect(t2.question.kind, QuestionKind.proportion);
+      final s = newSession(store);
+      final t1 = await s.hear(
+          'She was late again and I was furious. When I am late it is different, but when she is late she just does not care.');
+      expect(t1.fallacies.map((h) => h.fallacy.id), contains('double_standard'));
+      expect(t1.question.kind, isNot(QuestionKind.chain));
+      expect((await store.list(Folder.fallacies)).first.note, endsWith('pending'));
+      expect(t1.context.toPrompt(), contains('pending, not yet raised: Double standard'));
+
+      final t2 = await s.hear('What do you think I should do about it?');
+      expect(t2.question.kind, QuestionKind.chain);
+      expect(t2.question.text, startsWith('What would it look like if we reversed the roles?'));
+
+      final t3 = await s.hear('I suppose I would want a bit of slack, I would explain.');
+      expect(t3.question.kind, QuestionKind.chain);
+      expect(t3.question.text, startsWith('And what are all the reasons'));
+
+      final t4 = await s.hear('She has the kids to drop off, her car is old, and she probably thinks I am strict.');
+      expect(t4.question.kind, QuestionKind.chain);
+      final t5 = await s.hear('It looks smaller, honestly.');
+      expect(t5.question.kind, isNot(QuestionKind.chain));
+      expect(s.pending, isEmpty);
+      final notes = (await store.list(Folder.fallacies)).map((e) => e.note ?? '').toList();
+      expect(notes.any((n) => n.contains('worked')), isTrue);
+    });
+
+    test('pending fallacies survive a restart', () async {
+      final store = MemoryStore();
+      final s1 = newSession(store);
+      await s1.hear('Everyone knows he is impossible to work with.');
+      final s2 = newSession(store);
+      await s2.load();
+      expect(s2.pending.map((h) => h.fallacy.id), contains('overgeneralization'));
     });
 
     test('a new focus term gets the definition question', () async {
       final store = MemoryStore();
-      final s = Session(wheel: wheel, lexicon: lexicon, router: RuleRouter(lexicon), store: store);
+      final s = newSession(store);
       final t = await s.hear('I did some budgeting for the trip and it went fine.');
       expect(t.question.kind, QuestionKind.definition);
       final t2 = await s.hear('It means I set the amount first and stick to it, last week for the car.');

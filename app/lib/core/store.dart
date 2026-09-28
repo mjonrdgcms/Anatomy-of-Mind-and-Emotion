@@ -83,6 +83,7 @@ abstract class Store {
   Future<List<Entry>> recent({int limit = 20});
   Future<List<Entry>> byPerson(String person);
   Future<void> move(int id, Folder to);
+  Future<void> annotate(int id, String note);
   Future<void> delete(int id);
   Future<Profile> profile();
   Future<void> saveProfile(Profile p);
@@ -169,6 +170,17 @@ class MemoryStore implements Store {
       animal: e.animal,
       approach: e.approach,
       note: e.note,
+    );
+  }
+
+  @override
+  Future<void> annotate(int id, String note) async {
+    final i = _entries.indexWhere((e) => e.id == id);
+    if (i < 0) return;
+    final e = _entries[i];
+    _entries[i] = Entry(
+      id: e.id, folder: e.folder, text: e.text, created: e.created,
+      person: e.person, animal: e.animal, approach: e.approach, note: note,
     );
   }
 

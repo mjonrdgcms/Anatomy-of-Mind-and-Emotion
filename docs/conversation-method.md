@@ -36,6 +36,7 @@ The app asks; it does not tell. The questions must not lead, and they must not b
 - **One question at a time, and the app waits.** The stress books: an overruled alarm gets louder, and a person interrogated gets defended.
 - **Contrary elements first.** Before the app draws a conclusion it names the element that pushes the other way and asks about it.
 - **End every session with a criterion.** One thing to watch for, one person to ask, one re-check time.
+- **Never point out a fallacy when it happens.** Record it with its context and wait until the person asks the app something; then ask the chain that lets them see it (`docs/context-and-definitions.md`, section 5).
 
 A question provokes insight when the person, answering it, says something they had not said before. The app tracks that: an answer that only restates the account gets a different follow-up than one that adds a person, a time, or a contrary element.
 

@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/grammar/approaches.json
     - assets/grammar/lexicon.json
+    - assets/grammar/fallacies.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

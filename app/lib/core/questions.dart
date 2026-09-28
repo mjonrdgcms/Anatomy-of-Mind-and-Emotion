@@ -25,6 +25,7 @@ enum QuestionKind {
   competentUse, // what the competent use of the tool would look like
   whoseEyes, // whose eyes are you seeing this through
   criterion, // the one thing to watch for and when to re-check
+  chain, // a step in a fallacy's question chain
   exception, // when was a time it went differently
   proportion, // out of the last ten times, how many
   definition, // what does X mean when you use it; the last time
@@ -103,6 +104,12 @@ class QuestionBank {
       );
 
   Question open() => Question(QuestionKind.open, 'Say more about that.');
+
+  Question chainStep(String text, String fallacyId) => Question(
+        QuestionKind.chain,
+        text,
+        about: fallacyId,
+      );
 
   Question exception(String? term) => Question(
         QuestionKind.exception,

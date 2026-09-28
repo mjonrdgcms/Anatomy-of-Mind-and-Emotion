@@ -107,6 +107,10 @@ class DbStore implements Store {
       _db.update('entries', {'folder': to.name}, where: 'id = ?', whereArgs: [id]);
 
   @override
+  Future<void> annotate(int id, String note) =>
+      _db.update('entries', {'note': note}, where: 'id = ?', whereArgs: [id]);
+
+  @override
   Future<void> delete(int id) => _db.delete('entries', where: 'id = ?', whereArgs: [id]);
 
   @override

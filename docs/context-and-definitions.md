@@ -15,7 +15,7 @@ The ideal is calculus. You cannot divide by zero, and a definition that covers e
 | **Archive** | Every transcript, whole, as spoken. Searchable. | Never. Searched only when something specific is needed. |
 | **Folders** | Short distilled entries (dreams, people, animals, places, waking, alarms). | One or two entries, only when a question needs them. |
 | **Definitions** | For each approach, dichotomy pole, tool and weapon: the specific phrases the person has used about it, with dates and what they were talking about at the time. This is the personality profile. | The definition summary of the three focus items only. |
-| **Absolutes** | Every statement with an absolute or hyperbole in it, with the words that made it absolute and the tool or approach it was about. | The most recent one, when it is the reason for the question. |
+| **Fallacies** | Every logical or meaningful fallacy, with the passage around it, the cue, and whether it has been worked. | Only the names of the pending ones, so a model knows what is held back. |
 | **Profile** | Favourites, disliked weapons, taboo and load-bearing pair, reframers, running lexicon profile. | The short form. |
 
 ## 3. The working context
@@ -41,21 +41,30 @@ From these:
 - A **blind spot** is a tool of an unseen approach with no phrases at all, or with phrases that are all negative. The definition does not seem to apply to anything.
 - The **space taken** by a panacea is the approach whose axis is most often absent in the passages where the panacea appears, restricted to the unseen approaches. That is the tool whose place is being occupied.
 
-## 5. Absolutes
+## 5. Fallacies
 
-Any time an absolute or hyperbole is used (always, never, everyone, nobody, everything, nothing, completely, impossible, the only, the worst, ruined, perfect, literally, a hundred percent, every single time), the definition is being missed. The statement is filed in Absolutes with the tool it was about, and the app's next question is the calculus move, phrased so it cannot lead:
+The black-and-white file is really the file of every logical fallacy. The mind is bound to logic, so whenever a fallacy is used the mind has been bypassed, and the definition is being missed. Absolutes (always, never, everyone, nobody) are one fallacy among many: overgeneralisation, false dilemma, catastrophising, slippery slope, mind reading, fortune telling, should statements, sunk cost, appeals to popularity and authority, post hoc, personalisation, emotional reasoning, tu quoque, self-labeling, loaded questions, straw man.
 
-- **The exception**: "When was a time it went differently?"
-- **The proportion**: "Out of the last ten times, how many?"
-- **The boundary**: "Where does that not apply?"
+There are also **meaningful fallacies**, where the heart is bypassed rather than the mind. The main one is the **double standard**: one rule for me, another for them. The shadow forms of *Beyond Flat Land* ch. 13 are the others: the ledger ("after everything I have done"), reduction to one mechanism ("you're just doing X"), kitchen-sinking, the freeze-out, the unilateral fact, the zoom-out that erases the complaint, and charm at the wrong moment. The author will add to this list.
 
-The app does not argue with the absolute. An overruled alarm gets louder. It asks for one more data point, which is all that reducing the divisor takes.
+The catalogue is `grammar/fallacies.json`. Each entry has its side (logic or meaning), the cues that detect it, and a **chain** of questions.
+
+**Timing.** The app never cuts the person off to point out a fallacy when it happens. The context in which it was used is the data: why it was needed just then. So the fallacy is recorded with the whole passage around it, marked pending, and nothing is said. When the person later asks the app something, the app answers with the first question of the chain for the most urgent pending fallacy (the double standard first, then other meaningful ones, then logical ones, most recent first), and walks the chain one question per turn. The double standard's chain:
+
+1. "What would it look like if we reversed the roles? What would you do in their situation?"
+2. "And what are all the reasons that person wouldn't see it the way you do?"
+3. "Having listed those, what, if anything, looks different about the original situation?"
+
+The person sees the fallacy themselves or does not; the app never names it. When the chain ends the record is marked worked, with the answers filed beside it. Pending fallacies survive between sessions, and the working context lists their names so a model knows what is being held back.
+
+The app uses calculus, and it also teaches it. Each chain is one more data point that reduces the divisor: an exception, a proportion, a reversed role, a list of reasons the other person has.
 
 ## 6. Where the questions come from now
 
 In order of precedence for each turn:
 
-1. An absolute in what was just said: the exception or the proportion, about the tool it was about.
+0. A fallacy chain in progress: its next step. Or, when the person has just asked the app something and a fallacy is pending: the first step of its chain.
+1. (Absolutes are not raised in the moment any more; they are fallacies, above.)
 2. A focus item with no definition yet: "What does [tool] mean when you use it? Tell me the last time." Then the boundary.
 3. A panacea in focus: the boundary question, and then who they know who is good at the space it is taking.
 4. A missing axis: who do you know who is good at that, and what would they do.

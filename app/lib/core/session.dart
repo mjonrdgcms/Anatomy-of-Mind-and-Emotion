@@ -1,7 +1,7 @@
-import 'absolutes.dart';
 import 'axis.dart';
 import 'context.dart';
 import 'definitions.dart';
+import 'fallacies.dart';
 import 'folders.dart';
 import 'lexicon.dart';
 import 'questions.dart';
@@ -17,7 +17,7 @@ class Turn {
     required this.axis,
     required this.question,
     required this.context,
-    this.absolutes = const [],
+    this.fallacies = const [],
     this.addedSomethingNew = false,
   });
   final List<Entry> filed;
@@ -25,7 +25,9 @@ class Turn {
   final AxisReading axis;
   final Question question;
   final WorkingContext context;
-  final List<Absolute> absolutes;
+
+  /// Recorded this turn, not raised.
+  final List<FallacyHit> fallacies;
   final bool addedSomethingNew;
 }
 
@@ -37,9 +39,10 @@ class Session {
     required this.lexicon,
     required this.router,
     required this.store,
+    required this.catalogue,
   })  : questions = QuestionBank(wheel),
         taboo = Taboo(wheel),
-        absolutes = AbsoluteDetector(lexicon),
+        detector = FallacyDetector(catalogue, lexicon),
         collector = DefinitionCollector(lexicon, wheel),
         analysis = DefinitionAnalysis(wheel);
 
@@ -47,16 +50,23 @@ class Session {
   final Lexicon lexicon;
   final Router router;
   final Store store;
+  final FallacyCatalogue catalogue;
   final QuestionBank questions;
   final Taboo taboo;
-  final AbsoluteDetector absolutes;
+  final FallacyDetector detector;
   final DefinitionCollector collector;
   final DefinitionAnalysis analysis;
   final AxisWatch watch = AxisWatch();
   final Focus focus = Focus();
 
   Question? _lastQuestion;
-  String? _lastAbsolute;
+
+  /// Fallacies recorded and not yet worked, oldest first.
+  final List<FallacyHit> pending = [];
+
+  /// The chain being walked, if any.
+  FallacyHit? _active;
+  int _step = 0;
   final Set<String> _saidSoFar = {};
   final Set<String> _askedDefinition = {};
   final Set<String> _askedBoundary = {};
@@ -65,6 +75,19 @@ class Session {
     final p = await store.profile();
     p.lexiconProfile.forEach((a, n) => watch.profile[a] = n);
     watch.passages = p.passages;
+    // Fallacies recorded in earlier sessions and never worked.
+    for (final e in await store.list(Folder.fallacies, limit: 200)) {
+      final note = e.note ?? '';
+      if (!note.endsWith('pending')) continue;
+      final name = note.split(' · ').first;
+      final f = catalogue.fallacies.where((x) => x.name == name).firstOrNull;
+      if (f == null) continue;
+      final cue = RegExp(r'"(.*)"').firstMatch(note)?.group(1) ?? '';
+      pending.add(FallacyHit(
+        fallacy: f, sentence: e.text, cue: cue, context: e.text,
+        about: const [], when: e.created, entryId: e.id,
+      ));
+    }
   }
 
   TabooReading? _reading(Profile p) => p.dislikedWeapons.isEmpty && p.favourites.isEmpty
@@ -108,18 +131,21 @@ class Session {
     }
     await store.addPhrases(phrases);
 
-    // Absolutes.
-    final abs = absolutes.detect(transcript);
-    for (final a in abs) {
-      await store.add(Entry(
-        folder: Folder.absolutes,
-        text: a.sentence,
+    // Fallacies: record with context, say nothing now. A question to the
+    // app, or an answer inside a chain, is not an account and is not scanned.
+    final hits = _active == null && !asksTheApp(transcript)
+        ? detector.detect(transcript, now)
+        : <FallacyHit>[];
+    for (final h in hits) {
+      h.entryId = await store.add(Entry(
+        folder: Folder.fallacies,
+        text: h.context,
         created: now,
-        approach: a.about.isEmpty ? null : a.about.first.approach,
-        note: '${a.words.join(", ")}${a.about.isEmpty ? "" : " · about ${a.about.first.name}"}',
+        approach: h.fallacy.approach ?? (h.about.isEmpty ? null : h.about.first.approach),
+        note: '${h.fallacy.name} · "${h.cue}" · pending',
       ));
+      pending.add(h);
     }
-    if (abs.isNotEmpty) _lastAbsolute = abs.last.sentence;
 
     // Score, watch, focus.
     final score = lexicon.score(transcript);
@@ -149,17 +175,25 @@ class Session {
         openQuestion: _openQuestion(sum),
       ));
     }
-    final ctx = WorkingContext(items, lastAbsolute: _lastAbsolute);
+    final ordered = pending.toList()
+      ..sort((a, b) {
+        final c = fallacyPriority(a).compareTo(fallacyPriority(b));
+        return c != 0 ? c : b.when.compareTo(a.when);
+      });
+    final ctx = WorkingContext(items, pendingFallacies: ordered.map((h) => h.fallacy.name).toList());
 
     // Choose one question by precedence. A person just named for an axis
     // always gets the follow-up first.
     Question q;
-    final pending = _pendingWhatWouldTheyDo;
-    if (pending != null) {
+    final follow = _pendingWhatWouldTheyDo;
+    final chain = await _chainStep(transcript, ordered, now);
+    if (chain != null) {
+      q = chain;
+    } else if (follow != null) {
       _pendingWhatWouldTheyDo = null;
-      q = questions.whatWouldTheyDo(pending.$1, pending.$2);
+      q = questions.whatWouldTheyDo(follow.$1, follow.$2);
     } else {
-      q = _choose(abs, items, axis, profile, named);
+      q = _choose(items, axis, profile, named);
     }
     if (last != null && q.text == last.text) {
       q = addedNew ? questions.whenDidThatLastHappen() : questions.open();
@@ -171,7 +205,7 @@ class Session {
       axis: axis,
       question: q,
       context: ctx,
-      absolutes: abs,
+      fallacies: hits,
       addedSomethingNew: addedNew,
     );
   }
@@ -186,14 +220,39 @@ class Session {
     return 'whether the definition still holds in the newest case';
   }
 
-  Question _choose(List<Absolute> abs, List<FocusItem> items, AxisReading axis, Profile profile, String? named) {
-    // 1. An absolute: the exception or the proportion, about its tool.
-    if (abs.isNotEmpty) {
-      final a = abs.last;
-      final term = a.about.isEmpty ? null : a.about.first.name;
-      final last = _lastQuestion;
-      return last?.kind == QuestionKind.exception ? questions.proportion(term) : questions.exception(term);
+  /// Walk the active fallacy chain, or start one when the person asks the
+  /// app something and a fallacy is pending. Never in the moment: the
+  /// context of why it was used is data, and interrupting loses it.
+  Future<Question?> _chainStep(String transcript, List<FallacyHit> ordered, DateTime now) async {
+    if (_active != null) {
+      final f = _active!.fallacy;
+      _step++;
+      if (_step < f.chain.length) return questions.chainStep(f.chain[_step], f.id);
+      // Chain finished: the answer to the last step closes the record.
+      final h = _active!;
+      _active = null;
+      _step = 0;
+      pending.remove(h);
+      if (h.entryId != null) {
+        await store.annotate(h.entryId!, '${f.name} · "${h.cue}" · worked ${now.toIso8601String().substring(0, 10)}');
+      }
+      await store.add(Entry(
+        folder: Folder.fallacies,
+        text: transcript,
+        created: now,
+        approach: f.approach,
+        note: 'answer to ${f.name}',
+      ));
+      return null;
     }
+    if (ordered.isEmpty || !asksTheApp(transcript)) return null;
+    _active = ordered.first;
+    _step = 0;
+    return questions.chainStep(_active!.fallacy.chain.first, _active!.fallacy.id);
+  }
+
+  Question _choose(List<FocusItem> items, AxisReading axis, Profile profile, String? named) {
+    // 1. (Fallacies are handled before this, and only when asked.)
     // 2. The top focus item has no definition yet. One definition question
     // at a time, never two in a row, so the conversation is not a quiz.
     if (items.isNotEmpty && _lastQuestion?.kind != QuestionKind.definition) {
@@ -260,13 +319,12 @@ class Session {
         ));
       case QuestionKind.criterion:
         await store.add(Entry(folder: Folder.alarms, text: transcript, created: now, note: 'criterion'));
-      case QuestionKind.exception:
-      case QuestionKind.proportion:
+      case QuestionKind.chain:
         await store.add(Entry(
-          folder: Folder.absolutes,
+          folder: Folder.fallacies,
           text: transcript,
           created: now,
-          note: 'answer to ${last.kind.name}${last.about == null ? "" : " about ${last.about}"}',
+          note: 'answer in ${catalogue.byId(last.about ?? "")?.name ?? "chain"}',
         ));
       default:
         break;

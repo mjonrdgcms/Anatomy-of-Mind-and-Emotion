@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'core/fallacies.dart';
 import 'core/folders.dart';
 import 'core/lexicon.dart';
 import 'core/session.dart';
@@ -29,6 +30,7 @@ class AppState {
   static Future<AppState> boot() async {
     final wheel = Wheel.fromJson(await rootBundle.loadString('assets/grammar/approaches.json'));
     final lexicon = Lexicon.fromJson(await rootBundle.loadString('assets/grammar/lexicon.json'));
+    final catalogue = FallacyCatalogue.fromJson(await rootBundle.loadString('assets/grammar/fallacies.json'));
     Store store;
     try {
       store = await DbStore.open();
@@ -40,6 +42,7 @@ class AppState {
       lexicon: lexicon,
       router: RuleRouter(lexicon),
       store: store,
+      catalogue: catalogue,
     );
     await session.load();
     return AppState._(

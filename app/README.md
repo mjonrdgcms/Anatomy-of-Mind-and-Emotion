@@ -25,6 +25,6 @@ The tests exercise the core with no phone: the wheel, the lexicon scorer, the ta
 
 ## Layout
 
-- `lib/core/` the theory as code: wheel, lexicon, taboo, axis, definitions (the person's phrases, panaceas and blind spots), absolutes (black-and-white statements), context (the three focus items handed to a model), questions, folders, store, session. Pure Dart, no platform code.
+- `lib/core/` the theory as code: wheel, lexicon, taboo, axis, definitions (the person's phrases, panaceas and blind spots), fallacies (logical and meaningful, recorded silently and worked by question chains when the person asks), context (the three focus items handed to a model), questions, folders, store, session. Pure Dart, no platform code.
 - `lib/services/` the phone: speech recognition, text to speech, SQLite.
-- `lib/ui/` four screens: Talk (with the working context shown above the conversation), Folders (Archive is searchable), Profile (definitions in the person's words, panaceas flagged, reframing library), Wheel (the survey).
+- `lib/ui/` four screens: Talk (with the working context shown above the conversation), Folders (Archive is searchable; Fallacies shows pending and worked), Profile (definitions in the person's words, panaceas flagged, reframing library), Wheel (the survey).
