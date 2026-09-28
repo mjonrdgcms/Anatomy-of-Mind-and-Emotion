@@ -11,6 +11,8 @@ Understanding phase. Nothing is built yet. The theory has been restated for the 
 - `docs/seven-in-dreams.md`: how the seven approaches of *Beyond Flat Land* enter a dream reading.
 - `docs/seven-symbols.md`: the body register as the primary symbol set for the seven (settled with the author), with secondary built forms and animal classes.
 - `docs/seven-emotions.md`: the seven emotions on their axes, each with its heard side and its screaming side, drawn from all four books.
+- `docs/approach-wheel.md`: the two wheel diagrams decoded: the seven dichotomies and their boundaries, each approach as six poles plus a bridge, the asset and risk halves, the eight types of data, the 56 tools and 56 weapons, and the opposites rule behind the author's early survey.
+- `grammar/approaches.json`: the same wheel as data (first file in the grammar layer).
 
 ## Proposed shape (for discussion)
 
