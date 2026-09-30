@@ -15,6 +15,7 @@ class Fallacy {
     required this.chain,
     this.source,
     this.approach,
+    this.category,
   });
   final String id;
   final String name;
@@ -24,6 +25,9 @@ class Fallacy {
   final List<String> chain;
   final String? source;
   final String? approach;
+
+  /// 'cost' for hostility and vindictiveness: the uncounted cost.
+  final String? category;
 
   bool get isMeaningful => side == 'meaning';
 }
@@ -69,6 +73,7 @@ class FallacyCatalogue {
         chain: List<String>.from(m['chain'] as List),
         source: m['source'] as String?,
         approach: m['approach'] as String?,
+        category: m['category'] as String?,
       );
     }).toList();
     return FallacyCatalogue._(list);
@@ -118,12 +123,14 @@ class FallacyDetector {
   }
 }
 
-/// Which pending fallacy to work first: the double standard, then other
+/// Which pending fallacy to work first: the double standard, then
+/// hostility and vindictiveness (the uncounted cost), then other
 /// meaningful ones, then logical ones; most recent first within each.
 int fallacyPriority(FallacyHit h) {
   if (h.fallacy.id == 'double_standard') return 0;
-  if (h.fallacy.isMeaningful) return 1;
-  return 2;
+  if (h.fallacy.category == 'cost') return 1;
+  if (h.fallacy.isMeaningful) return 2;
+  return 3;
 }
 
 /// Did the person ask the app something? That is when a chain may start.

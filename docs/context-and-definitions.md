@@ -45,11 +45,17 @@ From these:
 
 The black-and-white file is really the file of every logical fallacy. The mind is bound to logic, so whenever a fallacy is used the mind has been bypassed, and the definition is being missed. Absolutes (always, never, everyone, nobody) are one fallacy among many: overgeneralisation, false dilemma, catastrophising, slippery slope, mind reading, fortune telling, should statements, sunk cost, appeals to popularity and authority, post hoc, personalisation, emotional reasoning, tu quoque, self-labeling, loaded questions, straw man.
 
-There are also **meaningful fallacies**, where the heart is bypassed rather than the mind. The main one is the **double standard**: one rule for me, another for them. The shadow forms of *Beyond Flat Land* ch. 13 are the others: the ledger ("after everything I have done"), reduction to one mechanism ("you're just doing X"), kitchen-sinking, the freeze-out, the unilateral fact, the zoom-out that erases the complaint, and charm at the wrong moment. The author will add to this list.
+There are also **meaningful fallacies**, where the heart is bypassed rather than the mind. The main one is the **double standard**: one rule for me, another for them. The other category is **hostility and vindictiveness**, the two opposite poles of *Four Rivers*. When the mind is bypassed the result is hostile: wanting something gone, and not caring what it costs. When the heart is bypassed the result is vindictive: wanting something twisted into what is convenient to me, at any cost. Both fail to count the cost, so that is where their questions point. The trigger is usually "I just want (person) to", and the chain is:
+
+1. "Best case scenario, what do you then get out of it?"
+2. "And best case scenario, what would you have to sacrifice to make that happen?"
+3. "How could you achieve the same thing you really want without your plan depending on someone else thinking, feeling, or doing something you want them to?"
+
+After these come The shadow forms of *Beyond Flat Land* ch. 13 are the others: the ledger ("after everything I have done"), reduction to one mechanism ("you're just doing X"), kitchen-sinking, the freeze-out, the unilateral fact, the zoom-out that erases the complaint, and charm at the wrong moment. The author will add to this list.
 
 The catalogue is `grammar/fallacies.json`. Each entry has its side (logic or meaning), the cues that detect it, and a **chain** of questions.
 
-**Timing.** The app never cuts the person off to point out a fallacy when it happens. The context in which it was used is the data: why it was needed just then. So the fallacy is recorded with the whole passage around it, marked pending, and nothing is said. When the person later asks the app something, the app answers with the first question of the chain for the most urgent pending fallacy (the double standard first, then other meaningful ones, then logical ones, most recent first), and walks the chain one question per turn. The double standard's chain:
+**Timing.** The app never cuts the person off to point out a fallacy when it happens. The context in which it was used is the data: why it was needed just then. So the fallacy is recorded with the whole passage around it, marked pending, and nothing is said. When the person later asks the app something, the app answers with the first question of the chain for the most urgent pending fallacy (the double standard first, then hostility and vindictiveness, then other meaningful ones, then logical ones, most recent first), and walks the chain one question per turn. The double standard's chain:
 
 1. "What would it look like if we reversed the roles? What would you do in their situation?"
 2. "And what are all the reasons that person wouldn't see it the way you do?"

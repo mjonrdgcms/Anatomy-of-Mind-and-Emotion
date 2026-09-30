@@ -1,5 +1,5 @@
 {
- "_notes": "Fallacies the app records silently and provokes later (docs/context-and-definitions.md, section 5). side: 'logic' means the mind was bypassed; 'meaning' means the heart was. The author will add meaningful fallacies. cues are case-insensitive regular expressions over one sentence; chain is the sequence of questions asked, one per turn, once the person asks the app something.",
+ "_notes": "Fallacies the app records silently and provokes later (docs/context-and-definitions.md, section 5). side: 'logic' means the mind was bypassed; 'meaning' means the heart was. The author will add meaningful fallacies. cues are case-insensitive regular expressions over one sentence; chain is the sequence of questions asked, one per turn, once the person asks the app something. category 'cost' marks hostility and vindictiveness, whose chains point at the uncounted cost; they come right after the double standard in priority.",
  "fallacies": [
   {
    "id": "double_standard",
@@ -23,6 +23,59 @@
     "Having listed those, what, if anything, looks different about the original situation?"
    ],
    "source": "author",
+   "approach": null,
+   "category": null
+  },
+  {
+   "id": "vindictiveness",
+   "name": "Vindictiveness",
+   "side": "meaning",
+   "category": "cost",
+   "description": "The heart bypassed: wanting something twisted into what is convenient to me, at any cost.",
+   "cues": [
+    "\\bi (just )?(want|need|wish) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to|would) (just )?(see|feel|know|realise|realize|admit|apologi[sz]e|regret|understand|suffer|pay|learn|hurt|get it|say sorry|change|stop|listen)\\b",
+    "\\b(make|force|get) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to )?(see|feel|admit|apologi[sz]e|regret|understand|suffer|pay|realise|realize|listen|change)\\b",
+    "\\bteach (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) a lesson\\b",
+    "\\bget back at (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+)\\b",
+    "\\bget even\\b",
+    "\\bshow (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (what|how|who)\\b",
+    "\\bput (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) in (his|her|their) place\\b",
+    "\\bserves? (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) right\\b",
+    "\\b(he|she|they) (will|'ll) (pay|regret|be sorry|learn)\\b",
+    "\\bif (he|she|they) would (just|only)\\b",
+    "\\b(he|she|they) (need|needs) to (see|feel|admit|apologi[sz]e|understand|realise|realize|learn|change|stop)\\b",
+    "\\bi (just )?want (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) to\\b"
+   ],
+   "chain": [
+    "Best case scenario, what do you then get out of it?",
+    "And best case scenario, what would you have to sacrifice to make that happen?",
+    "How could you achieve the same thing you really want without your plan depending on someone else thinking, feeling, or doing something you want them to?"
+   ],
+   "source": "author; Four Rivers on vindictiveness as the opposite pole",
+   "approach": null
+  },
+  {
+   "id": "hostility",
+   "name": "Hostility",
+   "side": "logic",
+   "category": "cost",
+   "description": "The mind bypassed: wanting something gone, and not caring what it costs.",
+   "cues": [
+    "\\b(get|got|be) rid of (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+)\\b",
+    "\\bout of my (life|house|way|sight)\\b",
+    "\\b(i )?(just )?(wish|want|need) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to )?(would )?(just )?(leave|go away|disappear|be gone|quit|resign|get out|get lost|drop dead|die)\\b",
+    "\\bnever (want to )?see (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) again\\b",
+    "\\b(i )?want(ed)? (it|him|her|them) gone\\b",
+    "\\b(fire|sack|dump|ditch|cut off|block|delete) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+)\\b(?! (from|off))",
+    "\\bgone for good\\b",
+    "\\bwhatever it (takes|costs)\\b"
+   ],
+   "chain": [
+    "Best case scenario, what do you then get out of it?",
+    "And best case scenario, what would you have to sacrifice to make that happen?",
+    "How could you achieve the same thing you really want without your plan depending on someone else thinking, feeling, or doing something you want them to?"
+   ],
+   "source": "author; Four Rivers on hostility as the opposite pole",
    "approach": null
   },
   {
@@ -42,7 +95,8 @@
     "What would the relationship look like if neither side kept the score?"
    ],
    "source": "Beyond Flat Land ch. 13; Four Rivers on milk turned to debt",
-   "approach": "Unification"
+   "approach": "Unification",
+   "category": null
   },
   {
    "id": "just_doing",
@@ -60,7 +114,8 @@
     "What was the last thing they did that did not fit those words?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Deconstruction)",
-   "approach": "Deconstruction"
+   "approach": "Deconstruction",
+   "category": null
   },
   {
    "id": "kitchen_sink",
@@ -78,7 +133,8 @@
     "If only that one were fixed, what would be left?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Expansion)",
-   "approach": "Expansion"
+   "approach": "Expansion",
+   "category": null
   },
   {
    "id": "freeze_out",
@@ -97,7 +153,8 @@
     "Who do you know who would keep a gate in that wall, and what would they do?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Preservation)",
-   "approach": "Preservation"
+   "approach": "Preservation",
+   "category": null
   },
   {
    "id": "already_done",
@@ -114,7 +171,8 @@
     "What would they say they lost by not being asked?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Implementation)",
-   "approach": "Implementation"
+   "approach": "Implementation",
+   "category": null
   },
   {
    "id": "whole_thing",
@@ -132,7 +190,8 @@
     "When did that one thing last go well?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Transformation)",
-   "approach": "Transformation"
+   "approach": "Transformation",
+   "category": null
   },
   {
    "id": "charm",
@@ -149,7 +208,8 @@
     "What would it have cost to give them that instead?"
    ],
    "source": "Beyond Flat Land ch. 13 (shadow Initiation)",
-   "approach": "Initiation"
+   "approach": "Initiation",
+   "category": null
   },
   {
    "id": "overgeneralization",
@@ -165,7 +225,8 @@
     "Out of the last ten times, how many went that way?"
    ],
    "source": "author (calculus: reduce the divisor)",
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "false_dilemma",
@@ -184,7 +245,8 @@
     "Who do you know who would find a third way here, and what would they do?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "catastrophising",
@@ -200,7 +262,8 @@
     "What would you watch for that would tell you it is actually going that way, and when will you check?"
    ],
    "source": "Alphas and Postpartum: the alarm, the criterion, the re-check time",
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "slippery_slope",
@@ -219,7 +282,8 @@
     "Which of those steps is the least certain?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "mind_reading",
@@ -237,7 +301,8 @@
     "What are all the other reasons someone might do that?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "fortune_telling",
@@ -254,7 +319,8 @@
     "What is the earliest sign that it is going the other way?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "should",
@@ -269,7 +335,8 @@
     "What would happen if it were not followed this once?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "sunk_cost",
@@ -287,7 +354,8 @@
     "What is the cost from here forward, leaving the past out of it?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "popularity",
@@ -306,7 +374,8 @@
     "What does the person who disagrees say?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "authority",
@@ -322,7 +391,8 @@
     "What would change their mind?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "post_hoc",
@@ -339,7 +409,8 @@
     "Has the second thing ever happened without the first?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "personalization",
@@ -357,7 +428,8 @@
     "Who else had a hand in it?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "emotional_reasoning",
@@ -374,7 +446,8 @@
     "When did the feeling last turn out to be wrong?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "tu_quoque",
@@ -391,7 +464,8 @@
     "Is the point true on its own, leaving aside who said it?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "labeling",
@@ -407,7 +481,8 @@
     "What would you say to a friend who did the same thing?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "loaded_question",
@@ -423,7 +498,8 @@
     "When was a time that assumption did not hold?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   },
   {
    "id": "straw_man",
@@ -440,7 +516,8 @@
     "What is the strongest version of their point?"
    ],
    "source": null,
-   "approach": null
+   "approach": null,
+   "category": null
   }
  ]
 }

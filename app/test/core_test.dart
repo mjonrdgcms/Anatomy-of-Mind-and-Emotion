@@ -176,6 +176,17 @@ void main() {
       hits.sort((a, b) => fallacyPriority(a).compareTo(fallacyPriority(b)));
       expect(hits.first.fallacy.id, 'double_standard');
     });
+    test('hostility and vindictiveness point at the cost', () {
+      final v = d.detect('I just want Mark to admit he was wrong.', DateTime(2026));
+      expect(v.map((h) => h.fallacy.id), contains('vindictiveness'));
+      final h = d.detect('Honestly I just want him out of my life, whatever it costs.', DateTime(2026));
+      expect(h.map((x) => x.fallacy.id), contains('hostility'));
+      expect(h.first.fallacy.chain.first, startsWith('Best case scenario'));
+      final mixed = d.detect('Everyone knows it. I want her to see what she did.', DateTime(2026));
+      mixed.sort((a, b) => fallacyPriority(a).compareTo(fallacyPriority(b)));
+      expect(mixed.first.fallacy.category, 'cost');
+    });
+
     test('knows when the person asks the app', () {
       expect(asksTheApp('What do you think I should do?'), isTrue);
       expect(asksTheApp('Am I wrong here'), isTrue);
