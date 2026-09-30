@@ -51,7 +51,7 @@ There are also **meaningful fallacies**, where the heart is bypassed rather than
 2. "And best case scenario, what would you have to sacrifice to make that happen?"
 3. "How could you achieve the same thing you really want without your plan depending on someone else thinking, feeling, or doing something you want them to?"
 
-After these come The shadow forms of *Beyond Flat Land* ch. 13 are the others: the ledger ("after everything I have done"), reduction to one mechanism ("you're just doing X"), kitchen-sinking, the freeze-out, the unilateral fact, the zoom-out that erases the complaint, and charm at the wrong moment. The author will add to this list.
+After these come the shadow forms of *Beyond Flat Land* ch. 13: the ledger ("after everything I have done"), reduction to one mechanism ("you're just doing X"), kitchen-sinking, the freeze-out, the unilateral fact, the zoom-out that erases the complaint, and charm at the wrong moment. The author will add to this list.
 
 The catalogue is `grammar/fallacies.json`. Each entry has its side (logic or meaning), the cues that detect it, and a **chain** of questions.
 
