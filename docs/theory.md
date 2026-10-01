@@ -108,6 +108,10 @@ Each reading is a **slice**: true about what passed through it, incomplete about
 
 **Metals**: gold is the finished heart; lead is the same substance arrested (resentment: small doses, faintly sweet, stored in the bones); silver is the mind's coin and mirror; iron is stone with metal asleep in it. **The sword is truth made from memory by fire and hammering**; a broken sword's shards are kept because the stronger blade is in them. **Diamond** is carbon bonded in all four directions (the four loves), with no sliding plane, carried up through fire. **Pearl** is worth layered around a grain of sand, the heart's way with memory. The alchemical colours run black, white, yellow, red, which is water, milk, honey, wine.
 
+### Adding and subtracting
+
+The heart only adds, and the mind only subtracts. Love gives; logic cuts (the blade, the test, the boundary). Each is right in its own country. The two opposite poles of *Four Rivers* are what each does when it stops counting the cost. The mind, not caring about consequences, subtracts: it is **hostile**, and wants something gone. The heart, not caring about consequences, adds: it is **vindictive**, and wants something put into the other person. The commonest thing vindictiveness wants to add is **regret**, so that the other person changes. The two look different and have the same defect, an uncounted cost, so the same questions answer both (`docs/context-and-definitions.md`, section 5).
+
 ## 7. The four rivers
 
 Four is the count a body gives: front, back, two sides. There are four ways two people can stand and no fifth.

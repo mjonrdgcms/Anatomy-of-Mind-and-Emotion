@@ -182,6 +182,8 @@ void main() {
       final h = d.detect('Honestly I just want him out of my life, whatever it costs.', DateTime(2026));
       expect(h.map((x) => x.fallacy.id), contains('hostility'));
       expect(h.first.fallacy.chain.first, startsWith('Best case scenario'));
+      final regret = d.detect('I need her to feel bad about it so she changes.', DateTime(2026));
+      expect(regret.map((x) => x.fallacy.id), contains('vindictiveness'));
       final mixed = d.detect('Everyone knows it. I want her to see what she did.', DateTime(2026));
       mixed.sort((a, b) => fallacyPriority(a).compareTo(fallacyPriority(b)));
       expect(mixed.first.fallacy.category, 'cost');

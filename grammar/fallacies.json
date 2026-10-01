@@ -31,7 +31,7 @@
    "name": "Vindictiveness",
    "side": "meaning",
    "category": "cost",
-   "description": "The heart bypassed: wanting something twisted into what is convenient to me, at any cost.",
+   "description": "The heart bypassed. The heart only adds; vindictiveness is adding without counting the cost: wanting something put into the other person so that they change. Most often it wants to add regret.",
    "cues": [
     "\\bi (just )?(want|need|wish) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to|would) (just )?(see|feel|know|realise|realize|admit|apologi[sz]e|regret|understand|suffer|pay|learn|hurt|get it|say sorry|change|stop|listen)\\b",
     "\\b(make|force|get) (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to )?(see|feel|admit|apologi[sz]e|regret|understand|suffer|pay|realise|realize|listen|change)\\b",
@@ -44,7 +44,10 @@
     "\\b(he|she|they) (will|'ll) (pay|regret|be sorry|learn)\\b",
     "\\bif (he|she|they) would (just|only)\\b",
     "\\b(he|she|they) (need|needs) to (see|feel|admit|apologi[sz]e|understand|realise|realize|learn|change|stop)\\b",
-    "\\bi (just )?want (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) to\\b"
+    "\\bi (just )?want (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) to\\b",
+    "\\b(him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) (to |should |will |would )?(feel (bad|guilty|ashamed|terrible|sorry)|know how (it|that) feels|see what (he|she|they) (did|put me through)|feel what i felt|be sorry|wish (he|she|they) had)\\b",
+    "\\bi want (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+) to (feel|know|see|regret|realise|realize)\\b",
+    "\\bregret (it|this|that|what)\\b"
    ],
    "chain": [
     "Best case scenario, what do you then get out of it?",
@@ -59,7 +62,7 @@
    "name": "Hostility",
    "side": "logic",
    "category": "cost",
-   "description": "The mind bypassed: wanting something gone, and not caring what it costs.",
+   "description": "The mind bypassed. The mind only subtracts; hostility is subtracting without counting the cost: wanting something gone.",
    "cues": [
     "\\b(get|got|be) rid of (him|her|them|(my|the|this|that) \\w+|[A-Z]\\w+)\\b",
     "\\bout of my (life|house|way|sight)\\b",
